@@ -33,12 +33,12 @@ jobs:
           cache: true
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          
+      - name: Setup butler
+        uses: remarkablegames/setup-butler@v1
 
-      - name: Publish to Itch
-        uses: Ayowel/butler-to-itch@v1.1.0
-        with:
-          butler_key: ${{secrets.ITCHIO_API_KEY}}
-          itch_user: upta
-          itch_game: benjamin-crisper
-          version: ${{ github.ref_name }}
-          files: "${{ steps.export.outputs.archive_directory }}/web.zip"
+      - name: Upload to itch.io
+        # https://itch.io/docs/butler/pushing.html
+        run: butler push ${{ steps.export.outputs.archive_directory }} upta/benjamin-crisper:web
+        env:
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
