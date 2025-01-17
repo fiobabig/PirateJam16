@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://fsrbi8ynj3jj"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 248.0
+offset_top = 106.0
+offset_right = 525.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 50
+text = "Testo"
