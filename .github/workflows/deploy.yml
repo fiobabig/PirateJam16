@@ -1,0 +1,44 @@
+name: itch.io deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Setup GDFormatter
+        run: pip3 install "gdtoolkit==4.*"
+
+      - name: Godot Export
+        id: export
+        uses: firebelley/godot-export@v6.0.0
+        with:
+          godot_executable_download_url: https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: true
+          # Use the GitHub Actions workflow cache to cache the Godot export templates and Godot executable. 
+          # Helps speed up builds by not having to download them every time.
+          cache: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          
+      - name: Setup butler
+        uses: remarkablegames/setup-butler@v1
+
+      - name: Upload to itch.io
+        # https://itch.io/docs/butler/pushing.html
+        run: butler push ${{ steps.export.outputs.archive_directory }} upta/benjamin-crisper:web
+        env:
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
