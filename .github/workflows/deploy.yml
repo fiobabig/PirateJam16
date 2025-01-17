@@ -17,6 +17,9 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Setup GDFormatter
+        run: pip3 install "gdtoolkit==4.*"
+
       - name: Godot Export
         id: export
         uses: firebelley/godot-export@v6.0.0
@@ -32,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
       - name: Publish to Itch
-        uses: Ayowel/butler-to-itch@v1.0.0
+        uses: Ayowel/butler-to-itch@v1.1.0
         with:
           butler_key: ${{secrets.ITCHIO_API_KEY}}
           itch_user: upta
