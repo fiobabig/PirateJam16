@@ -39,6 +39,6 @@ jobs:
 
       - name: Upload to itch.io
         # https://itch.io/docs/butler/pushing.html
-        run: butler push ${{ steps.export.outputs.archive_directory }} upta/benjamin-crisper:web
+        run: butler push ${{ steps.export.outputs.archive_directory }}/web.zip upta/benjamin-crisper:web
         env:
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
