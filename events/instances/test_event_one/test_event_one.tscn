@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjvespjfv7j5p"]
+
+[ext_resource type="Script" path="res://events/instances/test_event_one/test_event_one.gd" id="1_mmme5"]
+
+[node name="TestEventOne" type="Node2D"]
+script = ExtResource("1_mmme5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 616.0
+offset_top = 299.0
+offset_right = 656.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 50
+text = "One"
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 81.0
+offset_right = 93.0
+offset_bottom = 112.0
+text = "Go to Two
+"
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]
