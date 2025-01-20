@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfe552kmae33y"]
+
+[ext_resource type="Script" path="res://event/service/event_service.gd" id="1_ima1m"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_2bn4x"]
+[ext_resource type="Resource" uid="uid://d3kwvechyqxjn" path="res://event/decision/instances/test_decision_one.tres" id="3_fbill"]
+[ext_resource type="Resource" uid="uid://2hmvxpyg8mcx" path="res://event/decision/instances/test_decision_two.tres" id="4_5thdq"]
+
+[node name="EventService" type="Node"]
+script = ExtResource("1_ima1m")
+decisions = Array[ExtResource("2_2bn4x")]([ExtResource("3_fbill"), ExtResource("4_5thdq")])

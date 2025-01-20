@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcsydwnhb4ii"]
+
+[ext_resource type="Script" path="res://event/event_frame.gd" id="1_sllxa"]
+
+[node name="EventFrame" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sllxa")
+
+[node name="ContentContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DecisionFrame" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DecisionFrame"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Description" type="Label" parent="DecisionFrame/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ornare diam, vel dignissim dolor."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DecisionFrame/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Option1" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 1"
+
+[node name="Option2" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 2"
+
+[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]

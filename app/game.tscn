@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://fsrbi8ynj3jj"]
 
 [ext_resource type="Script" path="res://app/game.gd" id="1_kxao5"]
-[ext_resource type="PackedScene" uid="uid://ctcsydwnhb4ii" path="res://events/event_frame.tscn" id="2_d4hr3"]
+[ext_resource type="PackedScene" uid="uid://ctcsydwnhb4ii" path="res://event/event_frame.tscn" id="2_d4hr3"]
 [ext_resource type="Texture2D" uid="uid://cfw1uuxxcitax" path="res://assets/bg.png" id="3_n1a3n"]
 [ext_resource type="PackedScene" uid="uid://d36o7vkm36qq" path="res://bearer/display/bearer_display.tscn" id="3_n5eym"]
 [ext_resource type="PackedScene" uid="uid://dpceg7ay1xdu6" path="res://main_menu/main_menu.tscn" id="4_a2yak"]
@@ -31,5 +31,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="EventFrame" parent="CanvasLayer" instance=ExtResource("2_d4hr3")]
+unique_name_in_owner = true
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("4_a2yak")]
+unique_name_in_owner = true

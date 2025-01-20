@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://brr7jiuq40lgk"]
-
-[ext_resource type="PackedScene" uid="uid://c8v5ysixk57ii" path="res://events/instances/test_event_two/test_event_two.tscn" id="1_aoecg"]
-[ext_resource type="Script" path="res://events/event_resource.gd" id="2_l7cxm"]
-
-[resource]
-script = ExtResource("2_l7cxm")
-name = "test_event_two"
-scene = ExtResource("1_aoecg")

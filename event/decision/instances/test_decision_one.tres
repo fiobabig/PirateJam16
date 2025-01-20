@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://d3kwvechyqxjn"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_sqhq3"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_qo2j6"]
+
+[sub_resource type="Resource" id="Resource_ucaf6"]
+script = ExtResource("1_sqhq3")
+alignment = 0
+bravery = 5
+compassion = -5
+text = "Do a noble thing"
+
+[sub_resource type="Resource" id="Resource_c3ou0"]
+script = ExtResource("1_sqhq3")
+alignment = -15
+bravery = 5
+compassion = -5
+text = "Do a mean thing"
+
+[resource]
+script = ExtResource("2_qo2j6")
+description = "This is test one. What do you do?"
+options = Array[ExtResource("1_sqhq3")]([SubResource("Resource_ucaf6"), SubResource("Resource_c3ou0")])
