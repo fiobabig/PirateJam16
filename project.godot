@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventService="*res://event/service/event_service.tscn"
 BearerService="*res://bearer/service/bearer_service.tscn"
+GameService="*res://app/game_service.gd"
 
 [display]
 

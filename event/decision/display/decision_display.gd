@@ -9,13 +9,10 @@ var _current_decision: Decision
 
 
 func _ready() -> void:
-	decision_frame.visible = false
-
 	EventService.start_decision.connect(_on_start_decision)
 
 
 func _on_start_decision(decision: Decision):
-	decision_frame.visible = true
 	_current_decision = decision
 	description.text = decision.description
 	option1.text = decision.options[0].text

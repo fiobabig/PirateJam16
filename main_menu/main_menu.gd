@@ -1,8 +1,13 @@
 extends Control
 
 
-func _on_start_pressed() -> void:
-	visible = false
+func _ready() -> void:
+	GameService.started.connect(_on_started)
 
-	BearerService.create()
-	EventService.next()
+
+func _on_start_pressed() -> void:
+	GameService.start()
+
+
+func _on_started():
+	visible = false

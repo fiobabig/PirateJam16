@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InflectionResource" load_steps=2 format=3 uid="uid://dxrs2ejo6utwb"]
+
+[ext_resource type="Script" path="res://event/inflection/inflection_resouce.gd" id="1_ydix6"]
+
+[resource]
+script = ExtResource("1_ydix6")
+description = "This is a test inflection (bravery focus)"
+bravery_weight = 0.7
+compassion_weight = 0.1
+justice_weight = 0.1
+temperance_weight = 0.1

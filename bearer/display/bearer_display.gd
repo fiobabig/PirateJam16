@@ -5,6 +5,8 @@ extends MarginContainer
 @onready var bond_label: Label = %Bond
 @onready var bravery_label: Label = %Bravery
 @onready var compassion_label: Label = %Compassion
+@onready var justice_label: Label = %Justice
+@onready var temperance_label: Label = %Temperance
 
 
 func _ready() -> void:
@@ -19,3 +21,5 @@ func _on_bearer_changed(bearer: BearerResource):
 	bond_label.text = "Bond: " + str(bearer.bond)
 	bravery_label.text = "Bravery: " + str(bearer.bravery)
 	compassion_label.text = "Compassion: " + str(bearer.compassion)
+	justice_label.text = "Justice: " + str(bearer.justice)
+	temperance_label.text = "Temperance: " + str(bearer.temperance)

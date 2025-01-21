@@ -18,13 +18,17 @@ func create():
 	_current.bond = 0
 	_current.bravery = random_stat()
 	_current.compassion = random_stat()
+	_current.justice = random_stat()
+	_current.temperance = random_stat()
 
 	changed.emit(_current)
 
 
-func update(option: DecisionOption):  #dunno if I actually want to do it with a DecisionOption, but easy for now
+func update(option: DecisionOption):
 	_current.bravery += option.bravery
 	_current.compassion += option.compassion
+	_current.justice += option.justice
+	_current.temperance += option.temperance
 
 	if sign(_current.alignment) == sign(option.alignment):
 		_current.bond += abs(option.alignment)

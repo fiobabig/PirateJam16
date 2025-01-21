@@ -5,9 +5,11 @@
 
 [sub_resource type="Resource" id="Resource_ucaf6"]
 script = ExtResource("1_sqhq3")
-alignment = 0
+alignment = 5
 bravery = 5
 compassion = -5
+justice = 5
+temperance = 0
 text = "Do a noble thing"
 
 [sub_resource type="Resource" id="Resource_c3ou0"]
@@ -15,6 +17,8 @@ script = ExtResource("1_sqhq3")
 alignment = -15
 bravery = 5
 compassion = -5
+justice = 0
+temperance = 0
 text = "Do a mean thing"
 
 [resource]
