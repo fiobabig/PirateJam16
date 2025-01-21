@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcrdr0y23lf4u"]
+
+[ext_resource type="Script" path="res://bearer/service/bearer_service.gd" id="1_0pngv"]
+
+[node name="BearerService" type="Node"]
+script = ExtResource("1_0pngv")

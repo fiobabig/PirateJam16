@@ -11,9 +11,23 @@ config_version=5
 [application]
 
 config/name="PirateJam16"
-run/main_scene="res://game.tscn"
+run/main_scene="res://app/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+EventService="*res://event/service/event_service.tscn"
+BearerService="*res://bearer/service/bearer_service.tscn"
+GameService="*res://app/game_service.gd"
+SkillService="*res://skill/service/skill_service.tscn"
+Enums="*res://app/enums.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
 
 [dotnet]
 
