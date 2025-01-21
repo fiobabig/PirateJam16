@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://kppd4qubr16d"]
+
+[ext_resource type="Script" path="res://skill/display/skill_display.gd" id="1_c1ipa"]
+[ext_resource type="Texture2D" uid="uid://b54u1dxrjccaq" path="res://assets/unknown_icon.png" id="1_lymlh"]
+
+[node name="SkillDisplay" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+script = ExtResource("1_c1ipa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="Control" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_lymlh")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+text = "Name"
+
+[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+text = "Description"

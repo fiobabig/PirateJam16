@@ -1,5 +1,6 @@
 extends MarginContainer
 
+@onready var bearer_died: CanvasItem = %BearerDied
 @onready var bearer_display: CanvasItem = %BearerDisplay
 @onready var decision_display: CanvasItem = %DecisionDisplay
 @onready var inflection_display: CanvasItem = %InflectionDisplay
@@ -16,6 +17,7 @@ func _ready() -> void:
 	EventService.victory_good.connect(_on_victory_good)
 	EventService.victory_evil.connect(_on_victory_evil)
 	EventService.unbonded.connect(_on_unbonded)
+	EventService.bearer_died.connect(_on_bearer_died)
 
 
 func _on_start_decision(decision: Decision):
@@ -50,7 +52,14 @@ func _on_unbonded(bearer: BearerResource):
 	loss_display.visible = true
 
 
+func _on_bearer_died(previous: BearerResource, next: BearerResource):
+	_hide_all()
+
+	bearer_died.visible = true
+
+
 func _hide_all():
+	bearer_died.visible = false
 	bearer_display.visible = false
 	decision_display.visible = false
 	inflection_display.visible = false

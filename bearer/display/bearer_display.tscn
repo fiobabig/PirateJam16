@@ -41,3 +41,11 @@ layout_mode = 2
 [node name="Temperance" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Lifespan" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Skills" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

@@ -8,6 +8,8 @@ script = ExtResource("1_e18lk")
 alignment = 5
 bravery = 5
 compassion = -5
+justice = 0
+temperance = 0
 text = "Do a brave, not very nice thing"
 
 [sub_resource type="Resource" id="Resource_fkx1p"]
@@ -15,6 +17,8 @@ script = ExtResource("1_e18lk")
 alignment = 0
 bravery = 0
 compassion = 5
+justice = 0
+temperance = 0
 text = "Do a nice, but ultimately meaningless, thing"
 
 [resource]

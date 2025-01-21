@@ -5,6 +5,7 @@ signal start_inflection(inflection: InflectionResource)
 signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
+signal bearer_died(previous: BearerResource, next: BearerResource)
 
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
@@ -20,6 +21,9 @@ enum Victory { None, Good, Evil }
 
 func next():
 	if _process_unbonded():
+		return
+
+	if _process_lifespan():
 		return
 
 	var victory = _process_victory()
@@ -45,6 +49,7 @@ func _process_decision():
 
 func _process_inflection():
 	_time_to_next_inflection = 3
+	BearerService.decrease_lifespan()
 
 	_current_inflection = inflections[randi() % inflections.size()]
 
@@ -74,6 +79,18 @@ func _process_victory() -> Victory:
 		return Victory.Evil
 	else:
 		return Victory.None
+
+
+func _process_lifespan() -> bool:
+	if BearerService.is_dead() == false:
+		return false
+
+	var previous = BearerService.current
+	var next = BearerService.create()
+
+	bearer_died.emit(previous, next)
+
+	return true
 
 
 func _process_unbonded() -> bool:
