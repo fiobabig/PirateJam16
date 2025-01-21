@@ -4,6 +4,7 @@ signal start_decision(decision: Decision)
 signal start_inflection(inflection: InflectionResource)
 signal victory_good
 signal victory_evil
+signal unbonded(bearer: BearerResource)
 
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
@@ -18,6 +19,9 @@ enum Victory { None, Good, Evil }
 
 
 func next():
+	if _process_unbonded():
+		return
+
 	var victory = _process_victory()
 
 	if victory == Victory.None:
@@ -70,3 +74,12 @@ func _process_victory() -> Victory:
 		return Victory.Evil
 	else:
 		return Victory.None
+
+
+func _process_unbonded() -> bool:
+	if BearerService.is_unbonded() == false:
+		return false
+
+	unbonded.emit(BearerService.current)
+
+	return true

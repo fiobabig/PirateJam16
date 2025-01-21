@@ -27,6 +27,10 @@ func create():
 	changed.emit(_current)
 
 
+func is_unbonded() -> bool:
+	return _current.bond <= -100
+
+
 func update(option: DecisionOption):
 	_current.bravery += option.bravery
 	_current.compassion += option.compassion
