@@ -6,6 +6,9 @@ var first_names: Array[String] = ["Kamden", "Eadwulf", "Leigh", "Camdyn", "Huxle
 var last_names: Array[String] = ["Grovese", "Debenhame", "Brewere", "Goode", "Stoddarde"]
 
 var _current: BearerResource
+var current: BearerResource:
+	get:
+		return _current
 
 
 func create():

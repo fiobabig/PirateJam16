@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://03ba6erh0qlg"]
+[gd_scene load_steps=7 format=3 uid="uid://03ba6erh0qlg"]
 
 [ext_resource type="PackedScene" uid="uid://d36o7vkm36qq" path="res://bearer/display/bearer_display.tscn" id="1_bifpm"]
 [ext_resource type="Script" path="res://app/game_ui.gd" id="1_piche"]
 [ext_resource type="PackedScene" uid="uid://ctcsydwnhb4ii" path="res://event/decision/display/decision_display.tscn" id="2_b5b6n"]
 [ext_resource type="PackedScene" uid="uid://bimvq3vhbqo3u" path="res://event/inflection/display/inflection_display.tscn" id="4_n4sob"]
+[ext_resource type="PackedScene" uid="uid://566e71g14tc4" path="res://event/victory/victory_evil.tscn" id="5_1mhxg"]
+[ext_resource type="PackedScene" uid="uid://cixct64hwog81" path="res://event/victory/victory_good.tscn" id="6_1vyc8"]
 
 [node name="GameUI" type="MarginContainer"]
 anchors_preset = 15
@@ -22,5 +24,13 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="InflectionDisplay" parent="." instance=ExtResource("4_n4sob")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VictoryGood" parent="." instance=ExtResource("6_1vyc8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VictoryEvil" parent="." instance=ExtResource("5_1mhxg")]
 unique_name_in_owner = true
 layout_mode = 2
