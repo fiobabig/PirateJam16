@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://d3qcvs70s6ip6"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_6u2kf"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_g5j1a"]
+
+[sub_resource type="Resource" id="Resource_k7bre"]
+script = ExtResource("1_6u2kf")
+bravery = 0
+compassion = 25
+justice = 0
+temperance = 0
+text = "Provide medical aid to the enemy soldier."
+
+[sub_resource type="Resource" id="Resource_u082u"]
+script = ExtResource("1_6u2kf")
+bravery = 0
+compassion = -10
+justice = 0
+temperance = 0
+text = "Ignore the enemy and continue fighting."
+
+[resource]
+script = ExtResource("2_g5j1a")
+description = "During a battle, you see an enemy soldier wounded and helpless."
+options = Array[ExtResource("1_6u2kf")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

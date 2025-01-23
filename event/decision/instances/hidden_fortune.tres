@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://sf7j1pjacgjw"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_rgk7i"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_7nlll"]
+
+[sub_resource type="Resource" id="Resource_k7bre"]
+script = ExtResource("1_rgk7i")
+bravery = 30
+compassion = 5
+justice = 0
+temperance = 0
+text = "Brave the cave and seek the fortune."
+
+[sub_resource type="Resource" id="Resource_u082u"]
+script = ExtResource("1_rgk7i")
+bravery = 10
+compassion = 0
+justice = -25
+temperance = -10
+text = "Spread false rumors to deter others and search alone."
+
+[resource]
+script = ExtResource("2_7nlll")
+description = "You hear a rumor about a hidden fortune in a nearby cave, but it's home to dangerous creatures."
+options = Array[ExtResource("1_rgk7i")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

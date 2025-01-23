@@ -23,7 +23,7 @@ func create() -> BearerResource:
 	_current.compassion = _random_stat()
 	_current.justice = _random_stat()
 	_current.temperance = _random_stat()
-	_current.lifespan = 1
+	_current.lifespan = 3
 
 	changed.emit(_current)
 

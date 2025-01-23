@@ -6,6 +6,7 @@ signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
 signal bearer_died(previous: BearerResource, next: BearerResource)
+signal score_changed(score: float)
 
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
@@ -14,7 +15,7 @@ const SCORE_SCALE: float = 0.25
 
 var _current_inflection: InflectionResource
 var _score: float = 0.0  # -100 to 100
-var _time_to_next_inflection: int = 3
+var _time_to_next_inflection: int = 5
 
 enum Victory { None, Good, Evil }
 
@@ -48,7 +49,7 @@ func _process_decision():
 
 
 func _process_inflection():
-	_time_to_next_inflection = 3
+	_time_to_next_inflection = 5  #Reset this somewhere instead of 2 different spots.
 	BearerService.decrease_lifespan()
 
 	_current_inflection = inflections[randi() % inflections.size()]
@@ -72,6 +73,8 @@ func _process_victory() -> Victory:
 
 	_score += score_delta
 	_current_inflection = null
+
+	score_changed.emit(_score)
 
 	if _score >= 100:
 		return Victory.Good
