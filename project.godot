@@ -36,3 +36,7 @@ project/assembly_name="PirateJam16"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
+
+[gui]
+
+theme/custom="res://app/theme/game_theme.tres"

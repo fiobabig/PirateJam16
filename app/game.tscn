@@ -11,6 +11,7 @@ script = ExtResource("1_kxao5")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BG" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,8 +19,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_n1a3n")
 
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"BackgroundPanel"
+
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("3_4ru3i")]
 unique_name_in_owner = true
+visible = false
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("4_a2yak")]
 unique_name_in_owner = true
+visible = false
