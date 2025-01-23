@@ -3,11 +3,14 @@ class_name BearerResource
 
 @export var name: String
 
-# effectively constant, unless we have a skill that lets it get modified or something
-@export var alignment: int  # -100 to 100
-
 # hit points
 @export var bond: int  # -100 to 100. maybe positive bond adds scaling for decisions
+
+# alignment
+@export var bravery_inclination: float  # -1.0 to 1.0
+@export var compassion_inclination: float  # -1.0 to 1.0
+@export var justice_inclination: float  # -1.0 to 1.0
+@export var temperance_inclination: float  # -1.0 to 1.0
 
 # stats modified by decisions (inflection stats)
 @export var bravery: int  # -100 to 100

@@ -32,17 +32,33 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ornare 
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Option1" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Option1" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 1"
 
-[node name="Option2" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+[node name="Option1Stats" type="Label" parent="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DecisionFrame/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Option2" type="Button" parent="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Option 2"
 
-[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[node name="Option2Stats" type="Label" parent="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DecisionFrame/VBoxContainer/HBoxContainer/VBoxContainer2/Option2" to="." method="_on_option_2_pressed"]
