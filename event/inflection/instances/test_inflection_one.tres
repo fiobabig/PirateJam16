@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ydix6")
 description = "This is a test inflection (bravery focus)"
-bravery_weight = 0.7
-compassion_weight = 0.1
-justice_weight = 0.1
-temperance_weight = 0.1
+bravery_weight = 0.4
+compassion_weight = 0.2
+justice_weight = 0.2
+temperance_weight = 0.2
