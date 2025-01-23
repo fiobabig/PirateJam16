@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://68i5p3riavsf"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_qvvod"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_87m6s"]
+
+[sub_resource type="Resource" id="Resource_k7bre"]
+script = ExtResource("1_qvvod")
+bravery = 0
+compassion = 0
+justice = 30
+temperance = 0
+text = "Inform the authorities about the plot."
+
+[sub_resource type="Resource" id="Resource_u082u"]
+script = ExtResource("1_qvvod")
+bravery = 0
+compassion = 0
+justice = -10
+temperance = 0
+text = "Stay silent to avoid getting involved."
+
+[resource]
+script = ExtResource("2_87m6s")
+description = "You overhear a conversation about a plot to rob a bank."
+options = Array[ExtResource("1_qvvod")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

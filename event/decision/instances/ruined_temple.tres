@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://b6p1vy0va8mjw"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_mkoc0"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_6ors8"]
+
+[sub_resource type="Resource" id="Resource_k7bre"]
+script = ExtResource("1_mkoc0")
+bravery = 20
+compassion = 0
+justice = 15
+temperance = 0
+text = "Disable the trap and safely retrieve the treasure."
+
+[sub_resource type="Resource" id="Resource_u082u"]
+script = ExtResource("1_mkoc0")
+bravery = -5
+compassion = 0
+justice = -20
+temperance = -10
+text = "Trigger the trap and steal the treasure quickly."
+
+[resource]
+script = ExtResource("2_6ors8")
+description = "While exploring a ruined temple, you come across a treasure chest guarded by a trap."
+options = Array[ExtResource("1_mkoc0")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

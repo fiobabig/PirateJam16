@@ -9,12 +9,19 @@ extends MarginContainer
 @onready var temperance_label: Label = %Temperance
 @onready var lifespan_label: Label = %Lifespan
 @onready var skills_label: Label = %Skills
+@onready var score_label: Label = %Score
 
 
 func _ready() -> void:
 	visible = false
 	BearerService.changed.connect(_on_bearer_changed)
 	SkillService.selected_changed.connect(_on_selected_changed)
+	EventService.score_changed.connect(_on_score_changed)
+	_on_score_changed(0)
+
+
+func _on_score_changed(score: float):
+	score_label.text = "Score: " + str(score)
 
 
 func _on_bearer_changed(bearer: BearerResource):

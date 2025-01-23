@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=5 format=3 uid="uid://dj41avgbhrwug"]
+
+[ext_resource type="Script" path="res://event/decision/decision_option.gd" id="1_sv3p4"]
+[ext_resource type="Script" path="res://event/decision/decision.gd" id="2_y6xwh"]
+
+[sub_resource type="Resource" id="Resource_k7bre"]
+script = ExtResource("1_sv3p4")
+bravery = 30
+compassion = 0
+justice = 10
+temperance = 0
+text = "Study the scroll to uncover its secrets."
+
+[sub_resource type="Resource" id="Resource_u082u"]
+script = ExtResource("1_sv3p4")
+bravery = 0
+compassion = 0
+justice = 0
+temperance = 20
+text = "Safeguard the scroll to prevent misuse."
+
+[resource]
+script = ExtResource("2_y6xwh")
+description = "You find a magical scroll with unknown powers."
+options = Array[ExtResource("1_sv3p4")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])
