@@ -16,7 +16,6 @@ extends MarginContainer
 
 
 func _ready() -> void:
-	visible = false
 	BearerService.changed.connect(_on_bearer_changed)
 	SkillService.selected_changed.connect(_on_selected_changed)
 	EventService.score_changed.connect(_on_score_changed)
@@ -28,7 +27,6 @@ func _on_score_changed(score: float):
 
 
 func _on_bearer_changed(bearer: BearerResource):
-	visible = true
 	name_label.text = bearer.name
 	bond_label.text = "Bond: " + str(bearer.bond)
 	bravery_label.text = "Bravery: " + str(bearer.bravery)

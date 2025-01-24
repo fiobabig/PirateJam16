@@ -1,6 +1,5 @@
 extends MarginContainer
 
-@onready var decision_frame: Node = %DecisionFrame
 @onready var description: Label = %Description
 @onready var option1: Button = %Option1
 @onready var option2: Button = %Option2
