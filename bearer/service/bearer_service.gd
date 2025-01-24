@@ -2,8 +2,9 @@ extends Node
 
 signal changed(bearer: BearerResource)
 
-var first_names: Array[String] = ["Kamden", "Eadwulf", "Leigh", "Camdyn", "Huxley"]
-var last_names: Array[String] = ["Grovese", "Debenhame", "Brewere", "Goode", "Stoddarde"]
+@export var portraits: Array[Texture2D] = []
+
+var names: Array[String] = ["Kamden", "Eadwulf", "Leigh", "Camdyn", "Huxley", "Grovese", "Debenhame", "Brewere", "Goode", "Stoddarde"]
 
 var _current: BearerResource
 var current: BearerResource:
@@ -12,11 +13,9 @@ var current: BearerResource:
 
 
 func create() -> BearerResource:
-	var first_name = first_names[randi() % first_names.size()]
-	var last_name = last_names[randi() % last_names.size()]
-
 	_current = BearerResource.new()
-	_current.name = first_name + " " + last_name
+	_current.name = names[randi() % names.size()]
+	_current.portrait = portraits[randi() % portraits.size()]
 
 	# hit points
 	_current.bond = 0
@@ -31,7 +30,7 @@ func create() -> BearerResource:
 	_current.temperance = _random_stat()
 
 	# longevity
-	_current.lifespan = 3
+	_current.lifespan = 1
 
 	changed.emit(_current)
 
@@ -101,19 +100,27 @@ func _add_inclination(bearer: BearerResource):
 	match primary_inclination_stat:
 		1:
 			bearer.bravery_inclination = primary_inclination_value
+			bearer.primary_inclination = Enums.Stats.Bravery
 		2:
 			bearer.compassion_inclination = primary_inclination_value
+			bearer.primary_inclination = Enums.Stats.Compassion
 		3:
 			bearer.justice_inclination = primary_inclination_value
+			bearer.primary_inclination = Enums.Stats.Justice
 		4:
 			bearer.temperance_inclination = primary_inclination_value
+			bearer.primary_inclination = Enums.Stats.Temperance
 
 	match secondary_inclination_stat:
 		1:
 			bearer.bravery_inclination = secondary_inclination_value
+			bearer.secondary_inclination = Enums.Stats.Bravery
 		2:
 			bearer.compassion_inclination = secondary_inclination_value
+			bearer.secondary_inclination = Enums.Stats.Compassion
 		3:
 			bearer.justice_inclination = secondary_inclination_value
+			bearer.secondary_inclination = Enums.Stats.Justice
 		4:
 			bearer.temperance_inclination = secondary_inclination_value
+			bearer.secondary_inclination = Enums.Stats.Temperance

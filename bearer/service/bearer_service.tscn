@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcrdr0y23lf4u"]
+[gd_scene load_steps=11 format=3 uid="uid://dcrdr0y23lf4u"]
 
 [ext_resource type="Script" path="res://bearer/service/bearer_service.gd" id="1_0pngv"]
+[ext_resource type="Texture2D" uid="uid://j7kpwhykkshc" path="res://assets/portraits/character_01.png" id="2_42cye"]
+[ext_resource type="Texture2D" uid="uid://djjlyvcykvbp" path="res://assets/portraits/character_02.png" id="3_rgau6"]
+[ext_resource type="Texture2D" uid="uid://llgnyyljtqxj" path="res://assets/portraits/character_05.png" id="4_kujm8"]
+[ext_resource type="Texture2D" uid="uid://c8m0m0jmm138f" path="res://assets/portraits/character_06.png" id="5_kabd5"]
+[ext_resource type="Texture2D" uid="uid://tkm1666h7hj3" path="res://assets/portraits/character_07.png" id="6_jpteo"]
+[ext_resource type="Texture2D" uid="uid://cdyektqgmm0oj" path="res://assets/portraits/character_08.png" id="7_mcytd"]
+[ext_resource type="Texture2D" uid="uid://5tk4ongibpfu" path="res://assets/portraits/character_10.png" id="8_n6lcs"]
+[ext_resource type="Texture2D" uid="uid://csjo4c2k5ajqf" path="res://assets/portraits/character_12.png" id="9_gv6mg"]
+[ext_resource type="Texture2D" uid="uid://b07aaj48qyf4m" path="res://assets/portraits/character_13.png" id="10_76r5p"]
 
 [node name="BearerService" type="Node"]
 script = ExtResource("1_0pngv")
+portraits = Array[Texture2D]([ExtResource("2_42cye"), ExtResource("3_rgau6"), ExtResource("4_kujm8"), ExtResource("5_kabd5"), ExtResource("6_jpteo"), ExtResource("7_mcytd"), ExtResource("8_n6lcs"), ExtResource("9_gv6mg"), ExtResource("10_76r5p")])

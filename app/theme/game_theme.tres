@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dlvdnegr278oy"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dlvdnegr278oy"]
 
 [ext_resource type="StyleBox" uid="uid://8dxsykw6j238" path="res://app/theme/button_texture.tres" id="1_1teeo"]
 [ext_resource type="Texture2D" uid="uid://lk1jb0hqpwlh" path="res://assets/theme/big_panels.png" id="1_ace3d"]
@@ -10,6 +10,14 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nq5hj"]
 texture = ExtResource("1_ace3d")
 region_rect = Rect2(552, 592, 432, 352)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_estyp"]
+texture = ExtResource("4_xeeyj")
+texture_margin_left = 24.4281
+texture_margin_top = 24.1011
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+region_rect = Rect2(434, 664, 545, 204)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5cel"]
 content_margin_left = 60.0
@@ -23,6 +31,14 @@ texture_margin_right = 35.47
 texture_margin_bottom = 23.9037
 region_rect = Rect2(542, 526, 463, 88)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_at5jn"]
+texture = ExtResource("1_ace3d")
+texture_margin_left = 15.8276
+texture_margin_top = 16.0
+texture_margin_right = 16.1873
+texture_margin_bottom = 16.0
+region_rect = Rect2(532, 60, 472, 392)
+
 [resource]
 default_font = ExtResource("2_li3ig")
 default_font_size = 24
@@ -33,7 +49,11 @@ Button/styles/focus = ExtResource("2_ivv6m")
 Button/styles/hover = ExtResource("2_ivv6m")
 Button/styles/normal = ExtResource("1_1teeo")
 Button/styles/pressed = ExtResource("2_ivv6m")
+CharacterPanelContainer/base_type = &"PanelContainer"
+CharacterPanelContainer/styles/panel = SubResource("StyleBoxTexture_estyp")
 DarkLabel/base_type = &"Label"
 DarkLabel/colors/font_color = Color(0.136826, 0.136826, 0.136826, 1)
 DecisionPanelContainer/base_type = &"PanelContainer"
 DecisionPanelContainer/styles/panel = SubResource("StyleBoxTexture_b5cel")
+PortraitPanelContainer/base_type = &"PanelContainer"
+PortraitPanelContainer/styles/panel = SubResource("StyleBoxTexture_at5jn")
