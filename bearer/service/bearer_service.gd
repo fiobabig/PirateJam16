@@ -13,9 +13,22 @@ var current: BearerResource:
 
 
 func create() -> BearerResource:
+	var previous = _current
+
 	_current = BearerResource.new()
-	_current.name = names[randi() % names.size()]
-	_current.portrait = portraits[randi() % portraits.size()]
+
+	if previous == null:
+		_current.name = names[randi() % names.size()]
+		_current.portrait = portraits[randi() % portraits.size()]
+	else:
+		_current.name = previous.name
+		_current.portrait = previous.portrait
+
+		while previous.name == _current.name:
+			_current.name = names[randi() % names.size()]
+
+		while previous.portrait == _current.portrait:
+			_current.portrait = portraits[randi() % portraits.size()]
 
 	# hit points
 	_current.bond = 0

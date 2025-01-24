@@ -6,6 +6,7 @@ extends Control
 @export var darkest_color: Color
 
 @onready var portrait: TextureRect = %Portrait
+@onready var name_label: Label = %Name
 
 @onready var bravery: TextureRect = %Bravery
 @onready var justice: TextureRect = %Justice
@@ -23,6 +24,9 @@ func _ready() -> void:
 
 
 func _on_changed(bearer: BearerResource):
+	name_label.text = bearer.name
+	portrait.texture = bearer.portrait
+
 	bravery.modulate = _scale_color(bearer.bravery)
 	compassion.modulate = _scale_color(bearer.compassion)
 	justice.modulate = _scale_color(bearer.justice)
