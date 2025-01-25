@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://event/decision/score/score.gd" id="1_51gct"]
 [ext_resource type="Texture2D" uid="uid://cn42mr3ilforr" path="res://assets/score/background.png" id="1_deeqi"]
 [ext_resource type="Shader" path="res://shaders/conical_gradient.gdshader" id="1_n3pel"]
-[ext_resource type="Texture2D" uid="uid://bbccdhiwynyos" path="res://assets/score/circle.png" id="2_0xa28"]
+[ext_resource type="Texture2D" uid="uid://bbccdhiwynyos" path="res://assets/circle.png" id="2_0xa28"]
 [ext_resource type="Texture2D" uid="uid://o44h85t0g2ra" path="res://assets/score/rect.png" id="3_328hl"]
 [ext_resource type="Texture2D" uid="uid://cw2637n480q01" path="res://assets/score/banner.png" id="4_c5dh5"]
 [ext_resource type="Texture2D" uid="uid://ckuvx3wfs34ec" path="res://assets/score/pointer.png" id="6_mho0w"]

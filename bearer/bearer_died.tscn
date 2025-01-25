@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cymk0jjrjss5"]
+[gd_scene load_steps=9 format=3 uid="uid://cymk0jjrjss5"]
 
 [ext_resource type="Script" path="res://bearer/bearer_died.gd" id="1_4oy5t"]
 [ext_resource type="PackedScene" uid="uid://2jr5loh2rnc" path="res://skill/skill_selector.tscn" id="2_1tv72"]
+[ext_resource type="Texture2D" uid="uid://bbccdhiwynyos" path="res://assets/circle.png" id="3_2kxw2"]
+[ext_resource type="Texture2D" uid="uid://j7kpwhykkshc" path="res://assets/portraits/character_01.png" id="3_xv1bh"]
+[ext_resource type="Texture2D" uid="uid://64d8qd37o5j2" path="res://assets/grey_round_wood.png" id="4_a52fq"]
+[ext_resource type="Texture2D" uid="uid://cr4qfnmagbtb7" path="res://assets/death_border.png" id="4_hgk2a"]
+[ext_resource type="Shader" uid="uid://b5gwofb6cs7tu" path="res://shaders/greyscale.tres" id="5_cm45y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi7fw"]
+shader = ExtResource("5_cm45y")
 
 [node name="BearerDied" type="MarginContainer"]
 anchors_preset = 15
@@ -16,7 +24,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -24,8 +32,34 @@ layout_mode = 2
 text = "who died and left you in charge"
 horizontal_alignment = 1
 
+[node name="MarinContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Circle" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer"]
+clip_children = 1
+position = Vector2(228, 217)
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("3_2kxw2")
+
+[node name="GreyRoundWood" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer/Circle"]
+position = Vector2(8.05371, -4.02686)
+scale = Vector2(1.34228, 1.34228)
+texture = ExtResource("4_a52fq")
+
+[node name="Portrait" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer/Circle"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wi7fw")
+position = Vector2(2.68457, 5.36914)
+scale = Vector2(0.879404, 0.879404)
+texture = ExtResource("3_xv1bh")
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/MarinContainer"]
+layout_mode = 2
+texture = ExtResource("4_hgk2a")
+
 [node name="SkillSelector" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_1tv72")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Continue" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -33,6 +67,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Continue"
+text = "Time to find a new bearer..."
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
