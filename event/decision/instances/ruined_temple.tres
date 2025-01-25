@@ -5,18 +5,18 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_mkoc0")
-bravery = 20
+bravery = 40
 compassion = 0
-justice = 15
+justice = 30
 temperance = 0
 text = "Disable the trap and safely retrieve the treasure."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_mkoc0")
-bravery = -5
+bravery = -10
 compassion = 0
-justice = -20
-temperance = -10
+justice = -40
+temperance = -30
 text = "Trigger the trap and steal the treasure quickly."
 
 [resource]

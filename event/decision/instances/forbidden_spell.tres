@@ -5,18 +5,18 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_1hjqf")
-bravery = 35
+bravery = 70
 compassion = 0
-justice = 15
+justice = 30
 temperance = 0
 text = "Accept the offer to learn the spell."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_1hjqf")
-bravery = 5
+bravery = 10
 compassion = 0
-justice = 45
-temperance = 20
+justice = 90
+temperance = 40
 text = "Refuse the offer and report the sorcerer to the council."
 
 [resource]

@@ -7,15 +7,15 @@
 script = ExtResource("1_oxufa")
 bravery = 0
 compassion = 0
-justice = -20
-temperance = -10
+justice = -40
+temperance = -20
 text = "Take some of the goods for yourself and leave quickly."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_oxufa")
-bravery = -15
-compassion = -5
-justice = -25
+bravery = -30
+compassion = -10
+justice = -50
 temperance = 0
 text = "Steal the entire cart and sell the goods for profit."
 

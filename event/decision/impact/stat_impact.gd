@@ -29,4 +29,4 @@ func _animate():
 		_tween.kill()
 
 	_tween = create_tween()
-	_tween.tween_property(_icon, "custom_minimum_size", lerp(_min, _max, _scale), 0.25)
+	_tween.tween_property(_icon, "custom_minimum_size", lerp(_min, _max, _scale), 0.15)

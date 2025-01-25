@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_jtpv3")
 bravery = 0
-compassion = 35
+compassion = 70
 justice = 0
 temperance = 0
 text = "Donate your supplies to help the villagers."
@@ -14,9 +14,9 @@ text = "Donate your supplies to help the villagers."
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_jtpv3")
 bravery = 0
-compassion = -15
+compassion = -30
 justice = 0
-temperance = -5
+temperance = -10
 text = "Keep your supplies for your own journey."
 
 [resource]

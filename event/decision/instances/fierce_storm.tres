@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_anoog")
-bravery = -5
-compassion = -10
+bravery = -10
+compassion = -20
 justice = 0
 temperance = 0
 text = "Ignore the old man and continue on your way."
@@ -14,9 +14,9 @@ text = "Ignore the old man and continue on your way."
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_anoog")
 bravery = 0
-compassion = -20
-justice = -15
-temperance = -15
+compassion = -40
+justice = -30
+temperance = -30
 text = "Push the old man aside and take shelter in his place."
 
 [resource]

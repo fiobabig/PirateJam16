@@ -5,17 +5,17 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_jesls")
-bravery = -10
-compassion = -15
+bravery = -20
+compassion = -30
 justice = 0
 temperance = 0
 text = "Pretend not to see the soldier and walk away."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_jesls")
-bravery = -5
-compassion = -20
-justice = -30
+bravery = -10
+compassion = -40
+justice = -60
 temperance = 0
 text = "Take advantage of the soldier's weakness and rob them."
 

@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_voawh")
-bravery = 30
+bravery = 60
 compassion = 0
-justice = 20
+justice = 40
 temperance = 0
 text = "Destroy the artifact to break the curse."
 
@@ -16,7 +16,7 @@ script = ExtResource("1_voawh")
 bravery = 0
 compassion = 0
 justice = 0
-temperance = 25
+temperance = 50
 text = "Hide the artifact to prevent others from finding it."
 
 [resource]

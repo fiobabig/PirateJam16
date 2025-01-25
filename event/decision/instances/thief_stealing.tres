@@ -6,17 +6,17 @@
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_8cf1n")
 bravery = 0
-compassion = -10
-justice = -20
+compassion = -20
+justice = -40
 temperance = 0
 text = "Look the other way and let the thief escape."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_8cf1n")
-bravery = -10
+bravery = -20
 compassion = 0
-justice = -25
-temperance = -10
+justice = -50
+temperance = -20
 text = "Quietly take some of the stolen goods for yourself."
 
 [resource]

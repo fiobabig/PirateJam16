@@ -6,17 +6,17 @@
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_busxj")
 bravery = 0
-compassion = 20
-justice = 10
+compassion = 40
+justice = 20
 temperance = 0
 text = "Take the puppy in and care for it."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_busxj")
 bravery = 0
-compassion = 15
+compassion = 30
 justice = 0
-temperance = 25
+temperance = 50
 text = "Try to find the puppy's owner."
 
 [resource]
