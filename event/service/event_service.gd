@@ -63,7 +63,7 @@ func _process_victory() -> Victory:
 
 	var bond_bonus = 0
 	if BearerService.current.bond > 0:
-		bond_bonus = (float(BearerService.current.bond) / 100)
+		bond_bonus = BearerService.current.bond / 100.0
 
 	var score_delta = (
 		(
