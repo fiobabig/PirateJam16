@@ -1,5 +1,6 @@
 extends Node
 
+signal bond_changed(previous: float, next: float)
 signal changed(bearer: BearerResource)
 
 @export var portraits: Array[Texture2D] = []
@@ -47,6 +48,9 @@ func create() -> BearerResource:
 
 	changed.emit(_current)
 
+	var previous_bond = 0 if previous == null else previous.bond
+	bond_changed.emit(previous_bond, _current.bond)
+
 	return _current
 
 
@@ -70,6 +74,8 @@ func update(option: DecisionOption):
 	_current.justice = _cap(_current.justice + option.justice)
 	_current.temperance = _cap(_current.temperance + option.temperance)
 
+	var previous_bond = _current.bond
+
 	_current.bond += (
 		(option.bravery * _current.bravery_inclination)
 		+ (option.compassion * _current.compassion_inclination)
@@ -80,6 +86,7 @@ func update(option: DecisionOption):
 	_current.bond = _cap(_current.bond)
 
 	changed.emit(_current)
+	bond_changed.emit(previous_bond, _current.bond)
 
 
 func _cap(value: int):

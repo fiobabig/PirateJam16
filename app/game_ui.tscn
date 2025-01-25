@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://03ba6erh0qlg"]
+[gd_scene load_steps=12 format=3 uid="uid://03ba6erh0qlg"]
 
 [ext_resource type="PackedScene" uid="uid://d36o7vkm36qq" path="res://bearer/display/bearer_display.tscn" id="1_bifpm"]
 [ext_resource type="Script" path="res://app/game_ui.gd" id="1_piche"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://boq7u2txqtl36" path="res://game_over/loss_display.tscn" id="7_ib3yt"]
 [ext_resource type="PackedScene" uid="uid://cymk0jjrjss5" path="res://bearer/bearer_died.tscn" id="8_oet7t"]
 [ext_resource type="PackedScene" uid="uid://cyjs4kg2nhvy7" path="res://bearer/character_sheet/character_sheet.tscn" id="9_0kvhi"]
+[ext_resource type="PackedScene" uid="uid://bgm54ngs0h4d2" path="res://event/decision/score/score.tscn" id="10_k3wqh"]
+[ext_resource type="PackedScene" uid="uid://c645g5wqjd8pt" path="res://event/decision/score/sword.tscn" id="10_ohaiy"]
 
 [node name="GameUI" type="MarginContainer"]
 anchors_preset = 15
@@ -41,6 +43,7 @@ size_flags_stretch_ratio = 0.0
 
 [node name="BearerDisplay" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_bifpm")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="InflectionDisplay" parent="." instance=ExtResource("4_n4sob")]
@@ -62,3 +65,12 @@ layout_mode = 2
 [node name="BearerDied" parent="." instance=ExtResource("8_oet7t")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Sword" parent="." instance=ExtResource("10_ohaiy")]
+unique_name_in_owner = true
+
+[node name="Score" parent="." instance=ExtResource("10_k3wqh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10

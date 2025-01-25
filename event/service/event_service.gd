@@ -6,12 +6,12 @@ signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
 signal bearer_died(previous: BearerResource, next: BearerResource)
-signal score_changed(score: float)
+signal score_changed(previous: float, next: float)
 
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
 
-const SCORE_SCALE: float = 0.25
+const SCORE_SCALE: float = 1.25
 
 var _current_inflection: InflectionResource
 var _score: float = 0.0  # -100 to 100
@@ -71,10 +71,11 @@ func _process_victory() -> Victory:
 		* SCORE_SCALE
 	)
 
+	var previous_score = _score
 	_score += score_delta
 	_current_inflection = null
 
-	score_changed.emit(_score)
+	score_changed.emit(previous_score, _score)
 
 	if _score >= 100:
 		return Victory.Good

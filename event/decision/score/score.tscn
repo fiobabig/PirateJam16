@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgm54ngs0h4d2"]
+
+[ext_resource type="Script" path="res://event/decision/score/score.gd" id="1_51gct"]
+[ext_resource type="Texture2D" uid="uid://cn42mr3ilforr" path="res://assets/score/background.png" id="1_deeqi"]
+[ext_resource type="Shader" path="res://shaders/conical_gradient.gdshader" id="1_n3pel"]
+[ext_resource type="Texture2D" uid="uid://bbccdhiwynyos" path="res://assets/score/circle.png" id="2_0xa28"]
+[ext_resource type="Texture2D" uid="uid://o44h85t0g2ra" path="res://assets/score/rect.png" id="3_328hl"]
+[ext_resource type="Texture2D" uid="uid://cw2637n480q01" path="res://assets/score/banner.png" id="4_c5dh5"]
+[ext_resource type="Texture2D" uid="uid://ckuvx3wfs34ec" path="res://assets/score/pointer.png" id="6_mho0w"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_msuc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qck3"]
+shader = ExtResource("1_n3pel")
+shader_parameter/color1 = Color(0.956863, 0.956863, 0.956863, 1)
+shader_parameter/color2 = Color(0.12549, 0.12549, 0.12549, 1)
+
+[node name="Score" type="Control"]
+custom_minimum_size = Vector2(220, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_51gct")
+
+[node name="ScoreLayout" type="Node2D" parent="."]
+material = SubResource("CanvasItemMaterial_msuc6")
+position = Vector2(110, 55)
+scale = Vector2(0.45, 0.45)
+
+[node name="Mask" type="Sprite2D" parent="ScoreLayout"]
+clip_children = 1
+position = Vector2(0, -16.29)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("2_0xa28")
+
+[node name="Gauge" type="Sprite2D" parent="ScoreLayout/Mask"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6qck3")
+position = Vector2(0, 67)
+rotation = -1.5708
+texture = ExtResource("2_0xa28")
+
+[node name="Rect" type="Sprite2D" parent="ScoreLayout"]
+clip_children = 1
+position = Vector2(7, -54)
+scale = Vector2(2.865, 5.91)
+texture = ExtResource("3_328hl")
+
+[node name="Background" type="Sprite2D" parent="ScoreLayout/Rect"]
+position = Vector2(-2.44328, 8.79865)
+scale = Vector2(0.34904, 0.169205)
+texture = ExtResource("1_deeqi")
+
+[node name="Banner" type="Sprite2D" parent="ScoreLayout"]
+position = Vector2(0, 43.5)
+scale = Vector2(1, 0.97)
+texture = ExtResource("4_c5dh5")
+
+[node name="Pointer" type="Sprite2D" parent="ScoreLayout"]
+visible = false
+position = Vector2(0, -94)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("6_mho0w")
