@@ -23,14 +23,14 @@ func _ready() -> void:
 func _on_start_decision(decision: Decision):
 	_hide_all()
 
-	bearer_display.visible = true
+	#bearer_display.visible = true
 	decision_display.visible = true
 
 
 func _on_start_inflection(inflection: InflectionResource):
 	_hide_all()
 
-	bearer_display.visible = true
+	#bearer_display.visible = true
 	inflection_display.visible = true
 
 

@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://c645g5wqjd8pt"]
+
+[ext_resource type="Shader" path="res://shaders/sword.gdshader" id="1_isr0f"]
+[ext_resource type="Texture2D" uid="uid://c6uktmeam6pjx" path="res://assets/sword/dark_sword.png" id="2_wyr8n"]
+[ext_resource type="Texture2D" uid="uid://csnmqus4w2e60" path="res://assets/sword/light_sword.png" id="3_oad4e"]
+[ext_resource type="Script" path="res://event/decision/score/sword.gd" id="4_ssyip"]
+
+[sub_resource type="Gradient" id="Gradient_glo1n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x7de2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4sxnr"]
+color_ramp = SubResource("Gradient_glo1n")
+noise = SubResource("FastNoiseLite_x7de2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sbf8o"]
+shader = ExtResource("1_isr0f")
+shader_parameter/texture_mix_amount = 0.5
+shader_parameter/dissolve_value = 1.0
+shader_parameter/shadow_outline_width = 2.0
+shader_parameter/shadow_outline_color = Color(0, 0, 0, 0.862745)
+shader_parameter/bond_outline_width = 0.0
+shader_parameter/bond_outline_color = Color(0.627451, 0.784314, 0.627451, 1)
+shader_parameter/glow_radius = 10.0
+shader_parameter/glow_amount = 0.5
+shader_parameter/dark_texture = ExtResource("2_wyr8n")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_4sxnr")
+
+[node name="Sword" type="Sprite2D"]
+material = SubResource("ShaderMaterial_sbf8o")
+position = Vector2(1146.5, 471)
+rotation = -1.5708
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("3_oad4e")
+script = ExtResource("4_ssyip")

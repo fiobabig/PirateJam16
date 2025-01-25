@@ -19,11 +19,11 @@ func _ready() -> void:
 	BearerService.changed.connect(_on_bearer_changed)
 	SkillService.selected_changed.connect(_on_selected_changed)
 	EventService.score_changed.connect(_on_score_changed)
-	_on_score_changed(0)
+	_on_score_changed(0, 0)
 
 
-func _on_score_changed(score: float):
-	score_label.text = "Score: " + str(score)
+func _on_score_changed(previous: float, next: float):
+	score_label.text = "Score: " + str(next)
 
 
 func _on_bearer_changed(bearer: BearerResource):
