@@ -1,0 +1,223 @@
+[gd_scene load_steps=17 format=3 uid="uid://cyjs4kg2nhvy7"]
+
+[ext_resource type="Script" path="res://bearer/character_sheet/character_sheet.gd" id="1_cgmpq"]
+[ext_resource type="Shader" uid="uid://bumhdh8q1rj6k" path="res://shaders/sepia.tres" id="2_p8kdx"]
+[ext_resource type="Texture2D" uid="uid://cdyektqgmm0oj" path="res://assets/portraits/character_08.png" id="3_3nsrp"]
+[ext_resource type="Texture2D" uid="uid://jrkjs6ypgvhb" path="res://assets/stats/bravery_clip.png" id="4_h74qp"]
+[ext_resource type="Shader" path="res://shaders/drop_shadow.gdshader" id="5_un71o"]
+[ext_resource type="Texture2D" uid="uid://bkfi5h87xp33b" path="res://assets/stats/bravery.png" id="6_2qe0d"]
+[ext_resource type="Texture2D" uid="uid://dgv62mep1r7tn" path="res://assets/stats/compassion_clip.png" id="7_ug3xe"]
+[ext_resource type="Texture2D" uid="uid://cwcs2u80dgq3r" path="res://assets/stats/compassion.png" id="8_03fo2"]
+[ext_resource type="Texture2D" uid="uid://yhfx0menuuru" path="res://assets/stats/justice_clip.png" id="9_e4nik"]
+[ext_resource type="Texture2D" uid="uid://ck0mihd660pxl" path="res://assets/stats/justice.png" id="10_xn3bp"]
+[ext_resource type="Texture2D" uid="uid://b2aux4nvf2ubl" path="res://assets/stats/temperance_clip.png" id="11_dnktq"]
+[ext_resource type="Texture2D" uid="uid://bd4r3hnrm5d4l" path="res://assets/stats/temperance.png" id="12_bd6sg"]
+[ext_resource type="Texture2D" uid="uid://daikx8aomdih2" path="res://assets/stats/primary_inclination.png" id="13_e33l4"]
+[ext_resource type="Texture2D" uid="uid://b7u4mkx8xgwp3" path="res://assets/stats/secondary_inclination.png" id="14_4g6sb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63kf8"]
+shader = ExtResource("2_p8kdx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muieb"]
+shader = ExtResource("5_un71o")
+shader_parameter/radius = 1.0
+shader_parameter/modulate = null
+
+[node name="CharacterSheet" type="PanelContainer"]
+offset_right = 220.428
+offset_bottom = 329.101
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"CharacterPanelContainer"
+script = ExtResource("1_cgmpq")
+primary_inclination_icon = ExtResource("13_e33l4")
+secondary_inclination_icon = ExtResource("14_4g6sb")
+brightest_color = Color(0.956863, 0.956863, 0.956863, 1)
+darkest_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"PortraitPanelContainer"
+
+[node name="Portrait" type="TextureRect" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_63kf8")
+layout_mode = 2
+texture = ExtResource("3_3nsrp")
+expand_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"DarkLabel"
+text = "Jimithy Cricket"
+
+[node name="Stats" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+alignment = 1
+
+[node name="Bravery" type="TextureRect" parent="VBoxContainer/Stats"]
+unique_name_in_owner = true
+modulate = Color(0.909804, 0.909804, 0.909804, 1)
+clip_children = 1
+layout_mode = 2
+texture = ExtResource("4_h74qp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Stats/Bravery"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Stats/Bravery"]
+material = SubResource("ShaderMaterial_muieb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+texture = ExtResource("6_2qe0d")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Justice" type="TextureRect" parent="VBoxContainer/Stats"]
+unique_name_in_owner = true
+modulate = Color(0.28485, 0.28485, 0.28485, 1)
+clip_children = 1
+layout_mode = 2
+texture = ExtResource("9_e4nik")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Stats/Justice"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Stats/Justice"]
+material = SubResource("ShaderMaterial_muieb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+texture = ExtResource("10_xn3bp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Compassion" type="TextureRect" parent="VBoxContainer/Stats"]
+unique_name_in_owner = true
+modulate = Color(0.758192, 0.758192, 0.758192, 1)
+clip_children = 1
+layout_mode = 2
+texture = ExtResource("7_ug3xe")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Stats/Compassion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Stats/Compassion"]
+material = SubResource("ShaderMaterial_muieb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+texture = ExtResource("8_03fo2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Temperance" type="TextureRect" parent="VBoxContainer/Stats"]
+unique_name_in_owner = true
+modulate = Color(0.907942, 0.907942, 0.907942, 1)
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("11_dnktq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Stats/Temperance"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.803922, 0.803922, 0.803922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Stats/Temperance"]
+material = SubResource("ShaderMaterial_muieb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+texture = ExtResource("12_bd6sg")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Inclinations" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BraveryInclination" type="TextureRect" parent="VBoxContainer/Inclinations"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("13_e33l4")
+stretch_mode = 4
+
+[node name="JusticeInclination" type="TextureRect" parent="VBoxContainer/Inclinations"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+stretch_mode = 5
+
+[node name="CompassionInclination" type="TextureRect" parent="VBoxContainer/Inclinations"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+stretch_mode = 5
+
+[node name="TemperanceInclination" type="TextureRect" parent="VBoxContainer/Inclinations"]
+unique_name_in_owner = true
+modulate = Color(0.393086, 0.393086, 0.393085, 1)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("14_4g6sb")
+stretch_mode = 5

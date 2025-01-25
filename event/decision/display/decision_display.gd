@@ -1,11 +1,15 @@
 extends MarginContainer
 
-@onready var decision_frame: Node = %DecisionFrame
 @onready var description: Label = %Description
 @onready var option1: Button = %Option1
 @onready var option2: Button = %Option2
 @onready var option1_stats: Label = %Option1Stats
 @onready var option2_stats: Label = %Option2Stats
+
+@onready var bravery_impact: StatImpact = %BraveryImpact
+@onready var justice_impact: StatImpact = %JusticeImpact
+@onready var compassion_impact: StatImpact = %CompassionImpact
+@onready var temperance_impact: StatImpact = %TemperanceImpact
 
 var _current_decision: Decision
 
@@ -51,3 +55,28 @@ func _on_option_1_pressed() -> void:
 func _on_option_2_pressed() -> void:
 	BearerService.update(_current_decision.options[1])
 	EventService.next()
+
+
+func _on_option_1_mouse_entered() -> void:
+	var option = _current_decision.options[0]
+
+	bravery_impact.impact_scale = abs(option.bravery) / 50.0
+	justice_impact.impact_scale = abs(option.justice) / 50.0
+	compassion_impact.impact_scale = abs(option.compassion) / 50.0
+	temperance_impact.impact_scale = abs(option.temperance) / 50.0
+
+
+func _on_option_2_mouse_entered() -> void:
+	var option = _current_decision.options[1]
+
+	bravery_impact.impact_scale = abs(option.bravery) / 50.0
+	justice_impact.impact_scale = abs(option.justice) / 50.0
+	compassion_impact.impact_scale = abs(option.compassion) / 50.0
+	temperance_impact.impact_scale = abs(option.temperance) / 50.0
+
+
+func _on_option_mouse_exited() -> void:
+	bravery_impact.impact_scale = 0.5
+	justice_impact.impact_scale = 0.5
+	compassion_impact.impact_scale = 0.5
+	temperance_impact.impact_scale = 0.5

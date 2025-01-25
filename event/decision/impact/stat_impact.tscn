@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkjg3w1w33wwy"]
+
+[ext_resource type="Script" path="res://event/decision/impact/stat_impact.gd" id="1_dx527"]
+[ext_resource type="Texture2D" uid="uid://bkfi5h87xp33b" path="res://assets/stats/bravery.png" id="2_1kdgt"]
+[ext_resource type="Shader" path="res://shaders/drop_shadow_with_color.gdshader" id="2_gom40"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lldny"]
+shader = ExtResource("2_gom40")
+shader_parameter/radius = 1.0
+shader_parameter/modulate = Color(0.956863, 0.956863, 0.956863, 1)
+shader_parameter/main_color = Color(0, 0, 0, 1)
+
+[node name="StatImpact" type="CenterContainer"]
+custom_minimum_size = Vector2(80, 80)
+script = ExtResource("1_dx527")
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_lldny")
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_1kdgt")
+expand_mode = 3
