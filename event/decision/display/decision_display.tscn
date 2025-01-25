@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctcsydwnhb4ii"]
+[gd_scene load_steps=6 format=3 uid="uid://ctcsydwnhb4ii"]
 
 [ext_resource type="Script" path="res://event/decision/display/decision_display.gd" id="1_340pq"]
+[ext_resource type="PackedScene" uid="uid://dkjg3w1w33wwy" path="res://event/decision/impact/stat_impact.tscn" id="2_ipp4m"]
+[ext_resource type="Texture2D" uid="uid://ck0mihd660pxl" path="res://assets/stats/justice.png" id="4_l0x1s"]
+[ext_resource type="Texture2D" uid="uid://cwcs2u80dgq3r" path="res://assets/stats/compassion.png" id="5_c6yao"]
+[ext_resource type="Texture2D" uid="uid://bd4r3hnrm5d4l" path="res://assets/stats/temperance.png" id="6_cv0rb"]
 
 [node name="DecisionDisplay" type="MarginContainer"]
 anchors_preset = 15
@@ -21,13 +25,48 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"DecisionPanelContainer"
 
-[node name="Description" type="Label" parent="VBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Description" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_type_variation = &"DarkLabel"
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ornare diam, vel dignissim dolor."
 autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="BraveryImpact" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_ipp4m")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="JusticeImpact" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_ipp4m")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Icon" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/JusticeImpact" index="0"]
+texture = ExtResource("4_l0x1s")
+
+[node name="CompassionImpact" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_ipp4m")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Icon" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/CompassionImpact" index="0"]
+texture = ExtResource("5_c6yao")
+
+[node name="TemperanceImpact" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_ipp4m")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Icon" parent="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/TemperanceImpact" index="0"]
+texture = ExtResource("6_cv0rb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -45,7 +84,6 @@ text = "Option 1"
 
 [node name="Option1Stats" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
@@ -60,8 +98,16 @@ text = "Option 2"
 
 [node name="Option2Stats" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/HBoxContainer2/Option2" to="." method="_on_option_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/VBoxContainer/HBoxContainer2/Option2" to="." method="_on_option_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Option2" to="." method="_on_option_2_pressed"]
+
+[editable path="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/BraveryImpact"]
+[editable path="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/JusticeImpact"]
+[editable path="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/CompassionImpact"]
+[editable path="VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/TemperanceImpact"]
