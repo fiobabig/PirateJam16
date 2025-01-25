@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dlvdnegr278oy"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://dlvdnegr278oy"]
 
 [ext_resource type="StyleBox" uid="uid://8dxsykw6j238" path="res://app/theme/button_texture.tres" id="1_1teeo"]
 [ext_resource type="Texture2D" uid="uid://lk1jb0hqpwlh" path="res://assets/theme/big_panels.png" id="1_ace3d"]
@@ -6,6 +6,8 @@
 [ext_resource type="StyleBox" uid="uid://c6j2xm8lj3xcs" path="res://app/theme/button_active_texture.tres" id="2_ivv6m"]
 [ext_resource type="FontFile" uid="uid://b884rxxy02dms" path="res://assets/theme/YuseiMagic-Regular.ttf" id="2_li3ig"]
 [ext_resource type="Texture2D" uid="uid://cov2j34tvo2cq" path="res://assets/theme/scroll_panels.png" id="4_xeeyj"]
+[ext_resource type="Texture2D" uid="uid://cg4q2f34sth67" path="res://assets/theme/slider_grabber.png" id="6_j0krd"]
+[ext_resource type="Texture2D" uid="uid://dfovt2w3ct4pp" path="res://assets/theme/button_panels.png" id="7_r2aiy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nq5hj"]
 texture = ExtResource("1_ace3d")
@@ -31,6 +33,20 @@ texture_margin_right = 35.47
 texture_margin_bottom = 23.9037
 region_rect = Rect2(542, 526, 463, 88)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs70"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shgup"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lg45j"]
+texture = ExtResource("7_r2aiy")
+texture_margin_left = 17.4103
+texture_margin_top = 14.1459
+texture_margin_right = 18.9337
+texture_margin_bottom = 14.7988
+region_rect = Rect2(20, 610, 469, 68)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_at5jn"]
 texture = ExtResource("1_ace3d")
 texture_margin_left = 15.8276
@@ -55,5 +71,11 @@ DarkLabel/base_type = &"Label"
 DarkLabel/colors/font_color = Color(0.136826, 0.136826, 0.136826, 1)
 DecisionPanelContainer/base_type = &"PanelContainer"
 DecisionPanelContainer/styles/panel = SubResource("StyleBoxTexture_b5cel")
+HSlider/icons/grabber = ExtResource("6_j0krd")
+HSlider/icons/grabber_disabled = ExtResource("6_j0krd")
+HSlider/icons/grabber_highlight = ExtResource("6_j0krd")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3fs70")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_shgup")
+HSlider/styles/slider = SubResource("StyleBoxTexture_lg45j")
 PortraitPanelContainer/base_type = &"PanelContainer"
 PortraitPanelContainer/styles/panel = SubResource("StyleBoxTexture_at5jn")
