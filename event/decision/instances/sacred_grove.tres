@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_jqai3")
-bravery = 10
+bravery = 20
 compassion = 0
-justice = 40
+justice = 80
 temperance = 0
 text = "Confront the poachers and stop them."
 
@@ -15,7 +15,7 @@ text = "Confront the poachers and stop them."
 script = ExtResource("1_jqai3")
 bravery = 0
 compassion = 0
-justice = 25
+justice = 50
 temperance = 0
 text = "Report the poachers to the authorities."
 

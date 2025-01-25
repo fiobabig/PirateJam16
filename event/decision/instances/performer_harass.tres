@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_4rhmj")
-bravery = 25
-compassion = 15
+bravery = 50
+compassion = 30
 justice = 0
 temperance = 0
 text = "Step in and defend the performer."
@@ -14,9 +14,9 @@ text = "Step in and defend the performer."
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_4rhmj")
 bravery = 0
-compassion = 10
-justice = 10
-temperance = 20
+compassion = 20
+justice = 20
+temperance = 40
 text = "Alert nearby guards and assist the performer in getting help."
 
 [resource]

@@ -6,16 +6,16 @@
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_g457c")
 bravery = 0
-compassion = -10
-justice = -15
+compassion = -20
+justice = -30
 temperance = 0
 text = "Stay silent to avoid getting involved."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_g457c")
-bravery = -20
-compassion = -5
-justice = -30
+bravery = -40
+compassion = -10
+justice = -60
 temperance = 0
 text = "Join the plot and benefit from its success."
 

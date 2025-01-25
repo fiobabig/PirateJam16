@@ -16,7 +16,6 @@ func _on_score_changed(previous: float, next: float):
 
 
 func _on_bond_changed(previous: float, next: float):
-	next = 100
 	var delta = previous - next
 	var speed = abs(delta) / 100
 

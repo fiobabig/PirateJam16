@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_wqypf")
-bravery = 10
-compassion = 20
+bravery = 20
+compassion = 40
 justice = 0
 temperance = 0
 text = "Administer first aid and help the explorer."
@@ -14,9 +14,9 @@ text = "Administer first aid and help the explorer."
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_wqypf")
 bravery = 0
-compassion = 15
-justice = 5
-temperance = 15
+compassion = 30
+justice = 10
+temperance = 30
 text = "Escort the explorer back to safety and ensure they receive proper care."
 
 [resource]

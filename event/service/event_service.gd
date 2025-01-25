@@ -11,7 +11,7 @@ signal score_changed(previous: float, next: float)
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
 
-const SCORE_SCALE: float = 1.25
+const SCORE_SCALE: float = .25
 
 var _current_inflection: InflectionResource
 var _score: float = 0.0  # -100 to 100
@@ -22,9 +22,6 @@ enum Victory { None, Good, Evil }
 
 func next():
 	if _process_unbonded():
-		return
-
-	if _process_lifespan():
 		return
 
 	var victory = _process_victory()
@@ -38,6 +35,9 @@ func next():
 		victory_good.emit()
 	elif victory == Victory.Evil:
 		victory_evil.emit()
+
+	if _process_lifespan():
+		return
 
 
 func _process_decision():
@@ -61,6 +61,10 @@ func _process_victory() -> Victory:
 	if _current_inflection == null:
 		return Victory.None
 
+	var bond_bonus = 0
+	if BearerService.current.bond > 0:
+		bond_bonus = BearerService.current.bond / 100.0
+
 	var score_delta = (
 		(
 			(BearerService.current.bravery * _current_inflection.bravery_weight)
@@ -72,7 +76,24 @@ func _process_victory() -> Victory:
 	)
 
 	var previous_score = _score
-	_score += score_delta
+	print(
+		(
+			"Raw Delta "
+			+ str(
+				(
+					(BearerService.current.bravery * _current_inflection.bravery_weight)
+					+ (BearerService.current.compassion * _current_inflection.compassion_weight)
+					+ (BearerService.current.justice * _current_inflection.justice_weight)
+					+ (BearerService.current.temperance * _current_inflection.temperance_weight)
+				)
+			)
+			+ " braveW "
+			+ str(BearerService.current.bond)
+		)
+		#+ str(float(BearerService.current.bond) / 100)
+	)
+
+	_score += score_delta + score_delta * bond_bonus
 	_current_inflection = null
 
 	score_changed.emit(previous_score, _score)

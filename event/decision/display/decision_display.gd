@@ -27,10 +27,10 @@ func _on_start_decision(decision: Decision):
 	option1_stats.text = (
 		"B: "
 		+ str(decision.options[0].bravery)
-		+ " C: "
-		+ str(decision.options[0].compassion)
 		+ " J: "
 		+ str(decision.options[0].justice)
+		+ " C: "
+		+ str(decision.options[0].compassion)
 		+ " T: "
 		+ str(decision.options[0].temperance)
 	)
@@ -38,10 +38,10 @@ func _on_start_decision(decision: Decision):
 	option2_stats.text = (
 		"B: "
 		+ str(decision.options[1].bravery)
-		+ " C: "
-		+ str(decision.options[1].compassion)
 		+ " J: "
 		+ str(decision.options[1].justice)
+		+ " C: "
+		+ str(decision.options[1].compassion)
 		+ " T: "
 		+ str(decision.options[1].temperance)
 	)
@@ -60,19 +60,19 @@ func _on_option_2_pressed() -> void:
 func _on_option_1_mouse_entered() -> void:
 	var option = _current_decision.options[0]
 
-	bravery_impact.impact_scale = abs(option.bravery) / 50.0
-	justice_impact.impact_scale = abs(option.justice) / 50.0
-	compassion_impact.impact_scale = abs(option.compassion) / 50.0
-	temperance_impact.impact_scale = abs(option.temperance) / 50.0
+	bravery_impact.impact_scale = abs(option.bravery) / 25.0
+	justice_impact.impact_scale = abs(option.justice) / 25.0
+	compassion_impact.impact_scale = abs(option.compassion) / 25.0
+	temperance_impact.impact_scale = abs(option.temperance) / 25.0
 
 
 func _on_option_2_mouse_entered() -> void:
 	var option = _current_decision.options[1]
 
-	bravery_impact.impact_scale = abs(option.bravery) / 50.0
-	justice_impact.impact_scale = abs(option.justice) / 50.0
-	compassion_impact.impact_scale = abs(option.compassion) / 50.0
-	temperance_impact.impact_scale = abs(option.temperance) / 50.0
+	bravery_impact.impact_scale = abs(option.bravery) / 25.0
+	justice_impact.impact_scale = abs(option.justice) / 25.0
+	compassion_impact.impact_scale = abs(option.compassion) / 25.0
+	temperance_impact.impact_scale = abs(option.temperance) / 25.0
 
 
 func _on_option_mouse_exited() -> void:

@@ -5,18 +5,18 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_35qel")
-bravery = 40
+bravery = 80
 compassion = 0
 justice = 0
-temperance = 30
+temperance = 60
 text = "Harvest the herb despite the risks."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_35qel")
 bravery = 0
-compassion = 5
-justice = 40
-temperance = 15
+compassion = 10
+justice = 80
+temperance = 30
 text = "Protect the herb's location and inform the local healer."
 
 [resource]

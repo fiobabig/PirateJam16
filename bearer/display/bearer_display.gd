@@ -30,14 +30,14 @@ func _on_bearer_changed(bearer: BearerResource):
 	name_label.text = bearer.name
 	bond_label.text = "Bond: " + str(bearer.bond)
 	bravery_label.text = "Bravery: " + str(bearer.bravery)
-	compassion_label.text = "Compassion: " + str(bearer.compassion)
-	justice_label.text = "Justice: " + str(bearer.justice)
-	temperance_label.text = "Temperance: " + str(bearer.temperance)
-	lifespan_label.text = "Lifespan: " + str(bearer.lifespan)
 	bravery_inclination_label.text = "Bravery Inclination: " + str(bearer.bravery_inclination)
-	compassion_inclination_label.text = "Compassion Inclination: " + str(bearer.compassion_inclination)
+	justice_label.text = "Justice: " + str(bearer.justice)
 	justice_inclination_label.text = "Justice Inclination: " + str(bearer.justice_inclination)
+	compassion_label.text = "Compassion: " + str(bearer.compassion)
+	compassion_inclination_label.text = "Compassion Inclination: " + str(bearer.compassion_inclination)
+	temperance_label.text = "Temperance: " + str(bearer.temperance)
 	temperance_inclination_label.text = "Temperance Inclination: " + str(bearer.temperance_inclination)
+	lifespan_label.text = "Lifespan: " + str(bearer.lifespan)
 
 
 func _on_selected_changed(skills: Array[Enums.Skills]):

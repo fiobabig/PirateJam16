@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_blbae")
-bravery = 20
+bravery = 40
 compassion = 0
 justice = 0
 temperance = 0
@@ -16,7 +16,7 @@ script = ExtResource("1_blbae")
 bravery = 0
 compassion = 0
 justice = 0
-temperance = 15
+temperance = 30
 text = "Decline the offer and keep the item."
 
 [resource]
