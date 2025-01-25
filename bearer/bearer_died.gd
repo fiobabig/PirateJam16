@@ -11,11 +11,11 @@ func _ready() -> void:
 	EventService.bearer_died.connect(_on_bearer_died)
 	skill_selector.selected.connect(_on_skill_selected)
 
-	continue_button.visible = false
+	#continue_button.visible = false
 
 
 func _on_bearer_died(previous: BearerResource, next: BearerResource):
-	label.text = previous.name + "died, now with more " + next.name + "!"
+	label.text = previous.name + " has gone to their ancestors"
 
 
 func _on_continue_pressed() -> void:

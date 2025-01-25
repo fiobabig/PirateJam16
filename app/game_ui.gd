@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var loss_display: CanvasItem = %LossDisplay
 @onready var victory_evil: CanvasItem = %VictoryEvil
 @onready var victory_good: CanvasItem = %VictoryGood
+@onready var right_panel: CanvasItem = %RightPanel
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _on_start_decision(decision: Decision):
 
 	#bearer_display.visible = true
 	decision_display.visible = true
+	right_panel.visible = true
 
 
 func _on_start_inflection(inflection: InflectionResource):
@@ -32,6 +34,7 @@ func _on_start_inflection(inflection: InflectionResource):
 
 	#bearer_display.visible = true
 	inflection_display.visible = true
+	right_panel.visible = true
 
 
 func _on_victory_good():
@@ -59,6 +62,7 @@ func _on_bearer_died(previous: BearerResource, next: BearerResource):
 
 
 func _hide_all():
+	right_panel.visible = false
 	bearer_died.visible = false
 	bearer_display.visible = false
 	decision_display.visible = false
