@@ -88,8 +88,9 @@ func _process_victory() -> Victory:
 				)
 			)
 			+ " braveW "
-			+ str(float(BearerService.current.bond) / 100)
+			+ str(BearerService.current.bond)
 		)
+		#+ str(float(BearerService.current.bond) / 100)
 	)
 
 	_score += score_delta + score_delta * bond_bonus
