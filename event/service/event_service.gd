@@ -1,7 +1,7 @@
 extends Node
 
 signal start_decision(decision: Decision)
-signal start_inflection(inflection: InflectionResource)
+signal start_inflection(inflection: InflectionResource, score_delta: float)
 signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
@@ -24,7 +24,7 @@ func next():
 	if _process_unbonded():
 		return
 
-	var victory = _process_victory()
+	var victory = _calculate_victory()
 
 	if victory == Victory.None:
 		if _time_to_next_inflection > 0:
@@ -54,46 +54,19 @@ func _process_inflection():
 
 	_current_inflection = inflections[randi() % inflections.size()]
 
-	start_inflection.emit(_current_inflection)
+	var score_delta = _calculate_score_delta(BearerService.current, _current_inflection)
+
+	start_inflection.emit(_current_inflection, score_delta)
 
 
-func _process_victory() -> Victory:
+func _calculate_victory() -> Victory:
 	if _current_inflection == null:
 		return Victory.None
 
-	var bond_bonus = 0
-	if BearerService.current.bond > 0:
-		bond_bonus = BearerService.current.bond / 100.0
-
-	var score_delta = (
-		(
-			(BearerService.current.bravery * _current_inflection.bravery_weight)
-			+ (BearerService.current.compassion * _current_inflection.compassion_weight)
-			+ (BearerService.current.justice * _current_inflection.justice_weight)
-			+ (BearerService.current.temperance * _current_inflection.temperance_weight)
-		)
-		* SCORE_SCALE
-	)
-
 	var previous_score = _score
-	print(
-		(
-			"Raw Delta "
-			+ str(
-				(
-					(BearerService.current.bravery * _current_inflection.bravery_weight)
-					+ (BearerService.current.compassion * _current_inflection.compassion_weight)
-					+ (BearerService.current.justice * _current_inflection.justice_weight)
-					+ (BearerService.current.temperance * _current_inflection.temperance_weight)
-				)
-			)
-			+ " braveW "
-			+ str(BearerService.current.bond)
-		)
-		#+ str(float(BearerService.current.bond) / 100)
-	)
 
-	_score += score_delta + score_delta * bond_bonus
+	_score += _calculate_score_delta(BearerService.current, _current_inflection)
+
 	_current_inflection = null
 
 	score_changed.emit(previous_score, _score)
@@ -125,3 +98,21 @@ func _process_unbonded() -> bool:
 	unbonded.emit(BearerService.current)
 
 	return true
+
+
+func _calculate_score_delta(bearer: BearerResource, inflection: InflectionResource):
+	var bond_bonus = 0
+	if bearer.bond > 0:
+		bond_bonus = bearer.bond / 100.0
+
+	var score_delta = (
+		(
+			(bearer.bravery * inflection.bravery_weight)
+			+ (bearer.compassion * inflection.compassion_weight)
+			+ (bearer.justice * inflection.justice_weight)
+			+ (bearer.temperance * inflection.temperance_weight)
+		)
+		* SCORE_SCALE
+	)
+	print("scoreD: " + str(score_delta))
+	return score_delta + score_delta * bond_bonus

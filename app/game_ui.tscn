@@ -30,8 +30,14 @@ theme_override_constants/separation = 20
 
 [node name="DecisionDisplay" parent="HBoxContainer" instance=ExtResource("2_b5b6n")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
+
+[node name="InflectionDisplay" parent="HBoxContainer" instance=ExtResource("4_n4sob")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="RightPanel" type="VBoxContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
@@ -57,22 +63,22 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 10
 
-[node name="InflectionDisplay" parent="." instance=ExtResource("4_n4sob")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="VictoryGood" parent="." instance=ExtResource("6_1vyc8")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="VictoryEvil" parent="." instance=ExtResource("5_1mhxg")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="LossDisplay" parent="." instance=ExtResource("7_ib3yt")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="BearerDied" parent="." instance=ExtResource("8_oet7t")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2

@@ -44,7 +44,7 @@ func create() -> BearerResource:
 	_current.temperance = _random_stat()
 
 	# longevity
-	_current.lifespan = 3
+	_current.lifespan = 1
 
 	changed.emit(_current)
 

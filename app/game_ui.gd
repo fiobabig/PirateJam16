@@ -29,7 +29,7 @@ func _on_start_decision(decision: Decision):
 	right_panel.visible = true
 
 
-func _on_start_inflection(inflection: InflectionResource):
+func _on_start_inflection(inflection: InflectionResource, score_delta: float):
 	_hide_all()
 
 	#bearer_display.visible = true
