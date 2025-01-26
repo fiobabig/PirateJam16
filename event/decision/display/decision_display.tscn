@@ -84,6 +84,7 @@ text = "Option 1"
 
 [node name="Option1Stats" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
@@ -98,6 +99,7 @@ text = "Option 2"
 
 [node name="Option2Stats" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_mouse_entered"]
