@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpak1wh70kqjc"]
+
+[ext_resource type="AudioStream" uid="uid://crua3xkx3fakj" path="res://assets/audio/music/bgm_22.wav" id="1_7objq"]
+[ext_resource type="Script" path="res://app/audio_service.gd" id="1_86uqd"]
+
+[node name="AudioService" type="Node"]
+script = ExtResource("1_86uqd")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_7objq")

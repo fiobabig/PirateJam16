@@ -34,4 +34,4 @@ func _on_close_credits_pressed() -> void:
 
 
 func _on_audio_volume_value_changed(value: float) -> void:
-	pass  # Replace with function body.
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
