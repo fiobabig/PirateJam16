@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://b5gwofb6cs7tu"]
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://bg51573b2k1xd"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_s2mmu"]
 input_name = "color"

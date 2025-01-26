@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dfe552kmae33y"]
+[gd_scene load_steps=33 format=3 uid="uid://dfe552kmae33y"]
 
 [ext_resource type="Script" path="res://event/service/event_service.gd" id="1_ima1m"]
 [ext_resource type="Script" path="res://event/decision/decision.gd" id="2_2bn4x"]
@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://c8sfg7ecdnpue" path="res://event/decision/instances/lost_puppy.tres" id="5_44tad"]
 [ext_resource type="Resource" uid="uid://buid4vyw40l7m" path="res://event/decision/instances/chidlren_playing.tres" id="5_wfr4y"]
 [ext_resource type="Script" path="res://event/inflection/inflection_resouce.gd" id="5_x002a"]
-[ext_resource type="Resource" uid="uid://dxrs2ejo6utwb" path="res://event/inflection/instances/test_inflection_one.tres" id="6_85vka"]
+[ext_resource type="Resource" uid="uid://dxrs2ejo6utwb" path="res://event/inflection/instances/bravery_inflection.tres" id="6_85vka"]
 [ext_resource type="Resource" uid="uid://cukf82p2nvbqb" path="res://event/decision/instances/cursed_artifact.tres" id="6_yt012"]
 [ext_resource type="Resource" uid="uid://82c0cy3qc5c" path="res://event/decision/instances/enemy_solidier2.tres" id="7_jyca2"]
 [ext_resource type="Resource" uid="uid://d3qcvs70s6ip6" path="res://event/decision/instances/enemy_solidier.tres" id="8_68e8b"]
@@ -29,8 +29,11 @@
 [ext_resource type="Resource" uid="uid://hbyurpvk06jb" path="res://event/decision/instances/unattended_cart.tres" id="25_5gjhr"]
 [ext_resource type="Resource" uid="uid://v8k1ueu7htya" path="res://event/decision/instances/wealthy_noble.tres" id="26_0c76i"]
 [ext_resource type="Resource" uid="uid://dnk7oq0pl5ytt" path="res://event/decision/instances/wound_solidier.tres" id="27_4y6lg"]
+[ext_resource type="Resource" uid="uid://cpcrjh6em67k7" path="res://event/inflection/instances/compassion_inflection.tres" id="30_4t43j"]
+[ext_resource type="Resource" uid="uid://b0fi1q2vmhhi4" path="res://event/inflection/instances/justice_inflection.tres" id="31_m8y41"]
+[ext_resource type="Resource" uid="uid://c4vg6okh1ljai" path="res://event/inflection/instances/temperance_inflection.tres" id="32_p630p"]
 
 [node name="EventService" type="Node"]
 script = ExtResource("1_ima1m")
 decisions = Array[ExtResource("2_2bn4x")]([ExtResource("3_8jssc"), ExtResource("4_lkpb6"), ExtResource("5_wfr4y"), ExtResource("6_yt012"), ExtResource("7_jyca2"), ExtResource("8_68e8b"), ExtResource("9_ub7jj"), ExtResource("10_qjhpe"), ExtResource("11_eq86s"), ExtResource("12_mwpy1"), ExtResource("13_3y0v1"), ExtResource("14_4g205"), ExtResource("5_44tad"), ExtResource("16_46p0e"), ExtResource("17_dawo5"), ExtResource("18_00l5e"), ExtResource("19_w488t"), ExtResource("20_7nsgg"), ExtResource("21_xihad"), ExtResource("22_aelmv"), ExtResource("23_fmvmq"), ExtResource("24_r7o26"), ExtResource("25_5gjhr"), ExtResource("26_0c76i"), ExtResource("27_4y6lg")])
-inflections = Array[ExtResource("5_x002a")]([ExtResource("6_85vka")])
+inflections = Array[ExtResource("5_x002a")]([ExtResource("6_85vka"), ExtResource("30_4t43j"), ExtResource("31_m8y41"), ExtResource("32_p630p")])

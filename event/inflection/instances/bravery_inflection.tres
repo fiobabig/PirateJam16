@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InflectionResource" load_steps=2 format=3 uid="uid://dxrs2ejo6utwb"]
+
+[ext_resource type="Script" path="res://event/inflection/inflection_resouce.gd" id="1_mlaey"]
+
+[resource]
+script = ExtResource("1_mlaey")
+description = "With the weight of their father's legacy upon their shoulders, our bearer raised their blade against the beast, knowing that this battle would either herald their glory or brand them a coward."
+bravery_weight = 0.4
+compassion_weight = 0.2
+justice_weight = 0.2
+temperance_weight = 0.2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InflectionResource" load_steps=2 format=3 uid="uid://cpcrjh6em67k7"]
+
+[ext_resource type="Script" path="res://event/inflection/inflection_resouce.gd" id="1_oyr24"]
+
+[resource]
+script = ExtResource("1_oyr24")
+description = "After a fierce battle, our bearer extended a hand to the wounded enemy soldier, knowing that this act of mercy could either sow the seeds of peace or fan the flames of resentment."
+bravery_weight = 0.2
+compassion_weight = 0.4
+justice_weight = 0.2
+temperance_weight = 0.2

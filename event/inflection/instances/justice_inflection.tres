@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InflectionResource" load_steps=2 format=3 uid="uid://b0fi1q2vmhhi4"]
+
+[ext_resource type="Script" path="res://event/inflection/inflection_resouce.gd" id="1_8raaq"]
+
+[resource]
+script = ExtResource("1_8raaq")
+description = "With a heavy heart and an unwavering sense of duty, our bearer delivered the verdict, knowing that this decision would either restore balance to the realm or ignite the fires of rebellion."
+bravery_weight = 0.2
+compassion_weight = 0.2
+justice_weight = 0.4
+temperance_weight = 0.2

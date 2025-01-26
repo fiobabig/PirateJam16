@@ -1,7 +1,7 @@
 extends Node
 
 signal start_decision(decision: Decision)
-signal start_inflection(inflection: InflectionResource)
+signal start_inflection(inflection: InflectionResource, score_delta: float)
 signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
@@ -14,30 +14,40 @@ signal score_changed(previous: float, next: float)
 const SCORE_SCALE: float = .25
 
 var _current_inflection: InflectionResource
+var _current_state: State
 var _score: float = 0.0  # -100 to 100
 var _time_to_next_inflection: int = 5
 
 enum Victory { None, Good, Evil }
+enum State { Decision, Inflection }
 
 
 func next():
-	if _process_unbonded():
-		return
+	match _current_state:
+		State.Decision:
+			if _process_unbonded():
+				return
 
-	var victory = _process_victory()
+			if _time_to_next_inflection > 0:
+				_process_decision()
+			else:
+				_process_inflection()
+				_current_state = State.Inflection
 
-	if victory == Victory.None:
-		if _time_to_next_inflection > 0:
-			_process_decision()
-		else:
-			_process_inflection()
-	elif victory == Victory.Good:
-		victory_good.emit()
-	elif victory == Victory.Evil:
-		victory_evil.emit()
+		State.Inflection:
+			var victory = _calculate_victory()
 
-	if _process_lifespan():
-		return
+			if victory == Victory.Good:
+				victory_good.emit()
+			elif victory == Victory.Evil:
+				victory_evil.emit()
+			else:
+				if _process_lifespan():
+					return
+
+				_current_inflection = null
+				_current_state = State.Decision
+				_process_decision()
 
 
 func _process_decision():
@@ -54,47 +64,18 @@ func _process_inflection():
 
 	_current_inflection = inflections[randi() % inflections.size()]
 
-	start_inflection.emit(_current_inflection)
+	var score_delta = _calculate_score_delta(BearerService.current, _current_inflection)
+
+	start_inflection.emit(_current_inflection, score_delta)
 
 
-func _process_victory() -> Victory:
+func _calculate_victory() -> Victory:
 	if _current_inflection == null:
-		return Victory.None
-
-	var bond_bonus = 0
-	if BearerService.current.bond > 0:
-		bond_bonus = BearerService.current.bond / 100.0
-
-	var score_delta = (
-		(
-			(BearerService.current.bravery * _current_inflection.bravery_weight)
-			+ (BearerService.current.compassion * _current_inflection.compassion_weight)
-			+ (BearerService.current.justice * _current_inflection.justice_weight)
-			+ (BearerService.current.temperance * _current_inflection.temperance_weight)
-		)
-		* SCORE_SCALE
-	)
+		push_error("Inflection gone wrong, is null when calculating victory")
 
 	var previous_score = _score
-	print(
-		(
-			"Raw Delta "
-			+ str(
-				(
-					(BearerService.current.bravery * _current_inflection.bravery_weight)
-					+ (BearerService.current.compassion * _current_inflection.compassion_weight)
-					+ (BearerService.current.justice * _current_inflection.justice_weight)
-					+ (BearerService.current.temperance * _current_inflection.temperance_weight)
-				)
-			)
-			+ " braveW "
-			+ str(BearerService.current.bond)
-		)
-		#+ str(float(BearerService.current.bond) / 100)
-	)
 
-	_score += score_delta + score_delta * bond_bonus
-	_current_inflection = null
+	_score += _calculate_score_delta(BearerService.current, _current_inflection)
 
 	score_changed.emit(previous_score, _score)
 
@@ -125,3 +106,21 @@ func _process_unbonded() -> bool:
 	unbonded.emit(BearerService.current)
 
 	return true
+
+
+func _calculate_score_delta(bearer: BearerResource, inflection: InflectionResource):
+	var bond_bonus = 0
+	if bearer.bond > 0:
+		bond_bonus = bearer.bond / 100.0
+
+	var score_delta = (
+		(
+			(bearer.bravery * inflection.bravery_weight)
+			+ (bearer.compassion * inflection.compassion_weight)
+			+ (bearer.justice * inflection.justice_weight)
+			+ (bearer.temperance * inflection.temperance_weight)
+		)
+		* SCORE_SCALE
+	)
+	print("scoreD: " + str(score_delta))
+	return score_delta + score_delta * bond_bonus

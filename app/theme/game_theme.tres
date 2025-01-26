@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://dlvdnegr278oy"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dlvdnegr278oy"]
 
 [ext_resource type="StyleBox" uid="uid://8dxsykw6j238" path="res://app/theme/button_texture.tres" id="1_1teeo"]
 [ext_resource type="Texture2D" uid="uid://lk1jb0hqpwlh" path="res://assets/theme/big_panels.png" id="1_ace3d"]
@@ -47,6 +47,17 @@ texture_margin_right = 18.9337
 texture_margin_bottom = 14.7988
 region_rect = Rect2(20, 610, 469, 68)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kr76c"]
+content_margin_left = 60.0
+content_margin_right = 60.0
+content_margin_bottom = 45.0
+texture = ExtResource("4_xeeyj")
+texture_margin_left = 27.3864
+texture_margin_top = 44.503
+texture_margin_right = 27.0
+texture_margin_bottom = 30.5464
+region_rect = Rect2(287, 910, 454, 100)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_at5jn"]
 texture = ExtResource("1_ace3d")
 texture_margin_left = 15.8276
@@ -77,5 +88,7 @@ HSlider/icons/grabber_highlight = ExtResource("6_j0krd")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3fs70")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_shgup")
 HSlider/styles/slider = SubResource("StyleBoxTexture_lg45j")
+InflectionPanelContainer/base_type = &"PanelContainer"
+InflectionPanelContainer/styles/panel = SubResource("StyleBoxTexture_kr76c")
 PortraitPanelContainer/base_type = &"PanelContainer"
 PortraitPanelContainer/styles/panel = SubResource("StyleBoxTexture_at5jn")
