@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://566e71g14tc4"]
+[gd_scene load_steps=3 format=3 uid="uid://bqcrdepki1jks"]
 
-[node name="VictoryEvil" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="PackedScene" uid="uid://cixct64hwog81" path="res://game_over/victory_good.tscn" id="1_e0g8w"]
+[ext_resource type="Texture2D" uid="uid://c6uktmeam6pjx" path="res://assets/sword/dark_sword.png" id="2_2ym1c"]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 2
+[node name="VictoryEvil" instance=ExtResource("1_e0g8w")]
 
-[node name="Label" type="Label" parent="CenterContainer"]
-layout_mode = 2
-text = "Victory evil"
+[node name="Panel" parent="." index="0"]
+modulate = Color(0.442911, 0.442911, 0.442911, 1)
+
+[node name="TextureRect" parent="VictoryGood/VBoxContainer" index="1"]
+texture = ExtResource("2_2ym1c")
+
+[node name="Label2" parent="VictoryGood/VBoxContainer" index="2"]
+text = "You have achieved your aim in becoming a nightmarish bringer of death"

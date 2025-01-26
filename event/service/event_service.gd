@@ -50,6 +50,13 @@ func next():
 				_process_decision()
 
 
+func reset():
+	_current_inflection = null
+	_current_state = State.Decision
+	_score = 0.0
+	_time_to_next_inflection = 5
+
+
 func _process_decision():
 	_time_to_next_inflection = _time_to_next_inflection - 1
 

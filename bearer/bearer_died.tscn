@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://j7kpwhykkshc" path="res://assets/portraits/character_01.png" id="3_xv1bh"]
 [ext_resource type="Texture2D" uid="uid://64d8qd37o5j2" path="res://assets/grey_round_wood.png" id="4_a52fq"]
 [ext_resource type="Texture2D" uid="uid://cr4qfnmagbtb7" path="res://assets/death_border.png" id="4_hgk2a"]
-[ext_resource type="Shader" uid="uid://b5gwofb6cs7tu" path="res://shaders/greyscale.tres" id="5_cm45y"]
+[ext_resource type="Shader" uid="uid://bg51573b2k1xd" path="res://shaders/greyscale.tres" id="5_cm45y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wi7fw"]
 shader = ExtResource("5_cm45y")

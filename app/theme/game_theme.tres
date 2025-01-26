@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dlvdnegr278oy"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://dlvdnegr278oy"]
 
 [ext_resource type="StyleBox" uid="uid://8dxsykw6j238" path="res://app/theme/button_texture.tres" id="1_1teeo"]
 [ext_resource type="Texture2D" uid="uid://lk1jb0hqpwlh" path="res://assets/theme/big_panels.png" id="1_ace3d"]
@@ -66,6 +66,10 @@ texture_margin_right = 16.1873
 texture_margin_bottom = 16.0
 region_rect = Rect2(532, 60, 472, 392)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6u2b"]
+texture = ExtResource("1_ace3d")
+region_rect = Rect2(552, 80, 432, 352)
+
 [resource]
 default_font = ExtResource("2_li3ig")
 default_font_size = 24
@@ -92,3 +96,5 @@ InflectionPanelContainer/base_type = &"PanelContainer"
 InflectionPanelContainer/styles/panel = SubResource("StyleBoxTexture_kr76c")
 PortraitPanelContainer/base_type = &"PanelContainer"
 PortraitPanelContainer/styles/panel = SubResource("StyleBoxTexture_at5jn")
+VictoryPanel/base_type = &"Panel"
+VictoryPanel/styles/panel = SubResource("StyleBoxTexture_t6u2b")

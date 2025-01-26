@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://app/game_ui.gd" id="1_piche"]
 [ext_resource type="PackedScene" uid="uid://ctcsydwnhb4ii" path="res://event/decision/display/decision_display.tscn" id="2_b5b6n"]
 [ext_resource type="PackedScene" uid="uid://bimvq3vhbqo3u" path="res://event/inflection/display/inflection_display.tscn" id="4_n4sob"]
-[ext_resource type="PackedScene" uid="uid://566e71g14tc4" path="res://game_over/victory_evil.tscn" id="5_1mhxg"]
+[ext_resource type="PackedScene" uid="uid://bqcrdepki1jks" path="res://game_over/victory_evil.tscn" id="5_1mhxg"]
 [ext_resource type="PackedScene" uid="uid://cixct64hwog81" path="res://game_over/victory_good.tscn" id="6_1vyc8"]
 [ext_resource type="PackedScene" uid="uid://boq7u2txqtl36" path="res://game_over/loss_display.tscn" id="7_ib3yt"]
 [ext_resource type="PackedScene" uid="uid://cymk0jjrjss5" path="res://bearer/bearer_died.tscn" id="8_oet7t"]
@@ -18,50 +18,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_piche")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
-script = ExtResource("1_piche")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="DecisionDisplay" parent="HBoxContainer" instance=ExtResource("2_b5b6n")]
+[node name="DecisionDisplay" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_b5b6n")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
 
-[node name="InflectionDisplay" parent="HBoxContainer" instance=ExtResource("4_n4sob")]
+[node name="InflectionDisplay" parent="MarginContainer/HBoxContainer" instance=ExtResource("4_n4sob")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightPanel" type="VBoxContainer" parent="HBoxContainer"]
+[node name="RightPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CharacterSheet" parent="HBoxContainer/RightPanel" instance=ExtResource("9_0kvhi")]
+[node name="CharacterSheet" parent="MarginContainer/HBoxContainer/RightPanel" instance=ExtResource("9_0kvhi")]
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_stretch_ratio = 0.0
 
-[node name="BearerDisplay" parent="HBoxContainer/RightPanel" instance=ExtResource("1_bifpm")]
+[node name="BearerDisplay" parent="MarginContainer/HBoxContainer/RightPanel" instance=ExtResource("1_bifpm")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Sword" parent="HBoxContainer/RightPanel" instance=ExtResource("10_ohaiy")]
+[node name="Sword" parent="MarginContainer/HBoxContainer/RightPanel" instance=ExtResource("10_ohaiy")]
 unique_name_in_owner = true
 position = Vector2(106.5, 451)
 
-[node name="Score" parent="HBoxContainer/RightPanel" instance=ExtResource("10_k3wqh")]
+[node name="Score" parent="MarginContainer/HBoxContainer/RightPanel" instance=ExtResource("10_k3wqh")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 10
+
+[node name="BearerDied" parent="MarginContainer" instance=ExtResource("8_oet7t")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="VictoryGood" parent="." instance=ExtResource("6_1vyc8")]
 unique_name_in_owner = true
@@ -74,11 +82,6 @@ visible = false
 layout_mode = 2
 
 [node name="LossDisplay" parent="." instance=ExtResource("7_ib3yt")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="BearerDied" parent="." instance=ExtResource("8_oet7t")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2

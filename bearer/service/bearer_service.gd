@@ -68,6 +68,10 @@ func is_dead() -> bool:
 	return _current.lifespan <= 0
 
 
+func reset():
+	_current = null
+
+
 func update(option: DecisionOption):
 	_current.bravery = _cap(_current.bravery + option.bravery)
 	_current.compassion = _cap(_current.compassion + option.compassion)
