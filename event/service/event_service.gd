@@ -14,30 +14,40 @@ signal score_changed(previous: float, next: float)
 const SCORE_SCALE: float = .25
 
 var _current_inflection: InflectionResource
+var _current_state: State
 var _score: float = 0.0  # -100 to 100
 var _time_to_next_inflection: int = 5
 
 enum Victory { None, Good, Evil }
+enum State { Decision, Inflection }
 
 
 func next():
-	if _process_unbonded():
-		return
+	match _current_state:
+		State.Decision:
+			if _process_unbonded():
+				return
 
-	var victory = _calculate_victory()
+			if _time_to_next_inflection > 0:
+				_process_decision()
+			else:
+				_process_inflection()
+				_current_state = State.Inflection
 
-	if victory == Victory.None:
-		if _time_to_next_inflection > 0:
-			_process_decision()
-		else:
-			_process_inflection()
-	elif victory == Victory.Good:
-		victory_good.emit()
-	elif victory == Victory.Evil:
-		victory_evil.emit()
+		State.Inflection:
+			var victory = _calculate_victory()
 
-	if _process_lifespan():
-		return
+			if victory == Victory.Good:
+				victory_good.emit()
+			elif victory == Victory.Evil:
+				victory_evil.emit()
+			else:
+				if _process_lifespan():
+					return
+
+				_current_inflection = null
+				_current_state = State.Decision
+				_process_decision()
 
 
 func _process_decision():
@@ -61,13 +71,11 @@ func _process_inflection():
 
 func _calculate_victory() -> Victory:
 	if _current_inflection == null:
-		return Victory.None
+		push_error("Inflection gone wrong, is null when calculating victory")
 
 	var previous_score = _score
 
 	_score += _calculate_score_delta(BearerService.current, _current_inflection)
-
-	_current_inflection = null
 
 	score_changed.emit(previous_score, _score)
 

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_oyr24")
-description = "This is a test inflection (bravery focus)"
+description = "After a fierce battle, our bearer extended a hand to the wounded enemy soldier, knowing that this act of mercy could either sow the seeds of peace or fan the flames of resentment."
 bravery_weight = 0.2
 compassion_weight = 0.4
 justice_weight = 0.2

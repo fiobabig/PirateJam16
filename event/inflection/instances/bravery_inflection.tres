@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_mlaey")
-description = ""
+description = "With the weight of their father's legacy upon their shoulders, our bearer raised their blade against the beast, knowing that this battle would either herald their glory or brand them a coward."
 bravery_weight = 0.4
 compassion_weight = 0.2
 justice_weight = 0.2
