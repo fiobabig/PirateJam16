@@ -22,6 +22,7 @@ BearerService="*res://bearer/service/bearer_service.tscn"
 GameService="*res://app/game_service.gd"
 SkillService="*res://skill/service/skill_service.tscn"
 Enums="*res://app/enums.gd"
+AudioService="*res://app/AudioService.tscn"
 
 [display]
 
