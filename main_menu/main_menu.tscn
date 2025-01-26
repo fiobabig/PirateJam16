@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpceg7ay1xdu6"]
+[gd_scene load_steps=4 format=3 uid="uid://dpceg7ay1xdu6"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_dwqya"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6a01"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_uf0j2"]
+font_size = 48
+font_color = Color(0.0286859, 0.000133578, 0.0102884, 1)
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -10,10 +19,177 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dwqya")
 
-[node name="Button" type="Button" parent="."]
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "NIMI"
+label_settings = SubResource("LabelSettings_g6a01")
+horizontal_alignment = 1
+
+[node name="Spacing" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacing2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Start Game"
 
-[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Settings"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Credits"
+
+[node name="Settings" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacing Left" type="VBoxContainer" parent="Settings/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"DecisionPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings:"
+label_settings = SubResource("LabelSettings_uf0j2")
+horizontal_alignment = 1
+
+[node name="Spacing" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DarkLabel"
+text = "Audio:  "
+horizontal_alignment = 2
+
+[node name="AudioVolume" type="HSlider" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+value = 100.0
+
+[node name="Spacing2" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close Settings" type="Button" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[node name="Spacing Right" type="VBoxContainer" parent="Settings/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Credits" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacing Left" type="VBoxContainer" parent="Credits/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Credits/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"DecisionPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="Label" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Credits:"
+label_settings = SubResource("LabelSettings_uf0j2")
+horizontal_alignment = 1
+
+[node name="Spacing" type="Label" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"DarkLabel"
+text = "Game Designers:
+Brian U
+Jim M
+Spencer T"
+horizontal_alignment = 1
+
+[node name="Spacing2" type="Label" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacing3" type="Label" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close Credits" type="Button" parent="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[node name="Spacing Right" type="VBoxContainer" parent="Credits/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="value_changed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/AudioVolume" to="." method="_on_audio_volume_value_changed"]
+[connection signal="pressed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Close Settings" to="." method="_on_close_settings_pressed"]
+[connection signal="pressed" from="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Close Credits" to="." method="_on_close_credits_pressed"]
