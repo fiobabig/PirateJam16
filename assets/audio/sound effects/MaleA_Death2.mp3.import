@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx56rcc85bk5h"
+path="res://.godot/imported/MaleA_Death2.mp3-068f9402544d8a112e11e49fc83e181d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sound effects/MaleA_Death2.mp3"
+dest_files=["res://.godot/imported/MaleA_Death2.mp3-068f9402544d8a112e11e49fc83e181d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
