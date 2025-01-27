@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs54i0ywxxewm"]
+
+[ext_resource type="Script" path="res://main_menu/escape_menu.gd" id="1_xtdxq"]
+[ext_resource type="PackedScene" uid="uid://dgvc55qwdbxcw" path="res://main_menu/audio_settings.tscn" id="2_abl72"]
+
+[node name="EscapeMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtdxq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.12549, 0.12549, 0.12549, 0.752941)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacing Left" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"DecisionPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="AudioSettings" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_abl72")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MainMenu" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Main Menu"
+
+[node name="Close" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Close"
+
+[node name="Spacing Right" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
