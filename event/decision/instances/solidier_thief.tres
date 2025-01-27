@@ -9,7 +9,7 @@ bravery = -65
 compassion = 0
 justice = 0
 temperance = 0
-text = "Turn a blind eye, fearing retribution from the thief and potential backlash from other soldiers."
+text = "Turn a blind eye, fearing retribution."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_5pons")
@@ -21,5 +21,5 @@ text = "Report the theft to your commanding officer."
 
 [resource]
 script = ExtResource("2_3tyoy")
-description = "you witness a fellow soldier stealing supplies from the village storehouse."
+description = "You witness a fellow soldier stealing supplies."
 options = Array[ExtResource("1_5pons")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])
