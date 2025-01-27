@@ -13,11 +13,11 @@ text = "Tend to the soldier's wounds, despite being enemies."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_rq4ky")
-bravery = 0
-compassion = -30
+bravery = -30
+compassion = -10
 justice = 20
-temperance = 10
-text = "Take the soldier as a prisoner and continue fighting."
+temperance = 0
+text = "Slay the soldier and continue fighting."
 
 [resource]
 script = ExtResource("2_otsrr")

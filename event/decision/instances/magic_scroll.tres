@@ -5,10 +5,10 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_sv3p4")
-bravery = 60
+bravery = 35
 compassion = 0
-justice = 20
-temperance = 0
+justice = 0
+temperance = -50
 text = "Study the scroll to uncover its secrets."
 
 [sub_resource type="Resource" id="Resource_u082u"]
@@ -16,7 +16,7 @@ script = ExtResource("1_sv3p4")
 bravery = 0
 compassion = 0
 justice = 0
-temperance = 40
+temperance = 70
 text = "Safeguard the scroll to prevent misuse."
 
 [resource]

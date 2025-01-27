@@ -5,10 +5,10 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_blbae")
-bravery = 40
+bravery = 0
 compassion = 0
-justice = 0
-temperance = 0
+justice = 35
+temperance = -55
 text = "Accept the potion and give up the item."
 
 [sub_resource type="Resource" id="Resource_u082u"]
@@ -16,7 +16,7 @@ script = ExtResource("1_blbae")
 bravery = 0
 compassion = 0
 justice = 0
-temperance = 30
+temperance = 65
 text = "Decline the offer and keep the item."
 
 [resource]

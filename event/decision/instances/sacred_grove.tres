@@ -5,19 +5,19 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_jqai3")
-bravery = 20
+bravery = 40
 compassion = 0
-justice = 80
+justice = 65
 temperance = 0
 text = "Confront the poachers and stop them."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_jqai3")
-bravery = 0
+bravery = -20
 compassion = 0
-justice = 50
-temperance = 0
-text = "Report the poachers to the authorities."
+justice = 0
+temperance = -15
+text = "Take a bribe from the poachers."
 
 [resource]
 script = ExtResource("2_y761k")

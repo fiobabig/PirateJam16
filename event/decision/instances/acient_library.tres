@@ -7,13 +7,13 @@
 script = ExtResource("1_p46wh")
 bravery = 60
 compassion = 0
-justice = 40
-temperance = 0
+justice = -40
+temperance = -20
 text = "Study the forbidden texts to gain powerful insights."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_p46wh")
-bravery = 10
+bravery = 0
 compassion = 0
 justice = 30
 temperance = 40

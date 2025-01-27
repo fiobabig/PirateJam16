@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_qvvod")
-bravery = 0
+bravery = 5
 compassion = 0
 justice = 60
 temperance = 0
@@ -13,10 +13,10 @@ text = "Inform the authorities about the plot."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_qvvod")
-bravery = 0
+bravery = -10
 compassion = 0
 justice = -20
-temperance = 0
+temperance = 35
 text = "Stay silent to avoid getting involved."
 
 [resource]

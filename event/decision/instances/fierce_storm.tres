@@ -5,21 +5,21 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_anoog")
-bravery = -10
-compassion = -20
-justice = 0
-temperance = 0
+bravery = 25
+compassion = 0
+justice = 15
+temperance = 20
 text = "Ignore the old man and continue on your way."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_anoog")
 bravery = 0
-compassion = -40
+compassion = -50
 justice = -30
-temperance = -30
+temperance = 0
 text = "Push the old man aside and take shelter in his place."
 
 [resource]
 script = ExtResource("2_l6wuf")
-description = "During a fierce storm, you see an old man struggling to cross a flooded street."
+description = "During a fierce storm, you see an old man huddled in a copse."
 options = Array[ExtResource("1_anoog")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])
