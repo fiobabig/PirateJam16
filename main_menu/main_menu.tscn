@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpceg7ay1xdu6"]
+[gd_scene load_steps=5 format=3 uid="uid://dpceg7ay1xdu6"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_dwqya"]
+[ext_resource type="PackedScene" uid="uid://xevuxt0kr8yi" path="res://main_menu/settings.tscn" id="2_b08dd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6a01"]
 font_size = 96
@@ -54,112 +55,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Credits"
 
-[node name="Settings" type="PanelContainer" parent="."]
+[node name="Settings" parent="." instance=ExtResource("2_b08dd")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
-layout_mode = 2
-alignment = 1
-
-[node name="Spacing Left" type="VBoxContainer" parent="Settings/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="Settings/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"DecisionPanelContainer"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Header" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "Settings:"
-label_settings = SubResource("LabelSettings_uf0j2")
-horizontal_alignment = 1
-
-[node name="Spacing" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Description" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_type_variation = &"DarkLabel"
-text = "Master:  "
-horizontal_alignment = 2
-
-[node name="MasterAudioVolume" type="HSlider" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Description" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_type_variation = &"DarkLabel"
-text = "Music  "
-horizontal_alignment = 2
-
-[node name="MusicAudioVolume" type="HSlider" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Description" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_type_variation = &"DarkLabel"
-text = "SFX:  "
-horizontal_alignment = 2
-
-[node name="SFXAudioVolume" type="HSlider" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="Spacing2" type="Label" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Close Settings" type="Button" parent="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Close"
-
-[node name="Spacing Right" type="VBoxContainer" parent="Settings/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Credits" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -268,9 +166,5 @@ text = "Begin"
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="value_changed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MasterAudioVolume" to="." method="_on_master_audio_volume_value_changed"]
-[connection signal="value_changed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4/MusicAudioVolume" to="." method="_on_music_audio_volume_value_changed"]
-[connection signal="value_changed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/SFXAudioVolume" to="." method="_on_sfx_audio_volume_value_changed"]
-[connection signal="pressed" from="Settings/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Close Settings" to="." method="_on_close_settings_pressed"]
 [connection signal="pressed" from="Credits/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Close Credits" to="." method="_on_close_credits_pressed"]
 [connection signal="pressed" from="Tutorial/PanelContainer/VBoxContainer/Begin" to="." method="_on_begin_pressed"]

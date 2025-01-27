@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://xevuxt0kr8yi"]
+
+[ext_resource type="Script" path="res://main_menu/settings.gd" id="1_mtun3"]
+[ext_resource type="PackedScene" uid="uid://dgvc55qwdbxcw" path="res://main_menu/audio_settings.tscn" id="2_1m866"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uf0j2"]
+font_size = 48
+font_color = Color(0.0286859, 0.000133578, 0.0102884, 1)
+
+[node name="Settings" type="PanelContainer"]
+script = ExtResource("1_mtun3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacing Left" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"DecisionPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Header" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings
+"
+label_settings = SubResource("LabelSettings_uf0j2")
+horizontal_alignment = 1
+
+[node name="AudioSettings" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_1m866")]
+layout_mode = 2
+
+[node name="Close Settings" type="Button" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[node name="Spacing Right" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Close Settings" to="." method="_on_close_settings_pressed"]

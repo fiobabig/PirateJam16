@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgvc55qwdbxcw"]
+
+[ext_resource type="Script" path="res://main_menu/audio_settings.gd" id="1_2mna2"]
+
+[node name="AudioSettings" type="VBoxContainer"]
+script = ExtResource("1_2mna2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Description" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DarkLabel"
+text = "Master"
+horizontal_alignment = 2
+
+[node name="MasterAudioVolume" type="HSlider" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DarkLabel"
+text = "Music"
+horizontal_alignment = 2
+
+[node name="MusicAudioVolume" type="HSlider" parent="HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DarkLabel"
+text = "SFX"
+horizontal_alignment = 2
+
+[node name="SFXAudioVolume" type="HSlider" parent="HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[connection signal="value_changed" from="HBoxContainer/MasterAudioVolume" to="." method="_on_master_audio_volume_value_changed"]
+[connection signal="value_changed" from="HBoxContainer4/MusicAudioVolume" to="." method="_on_music_audio_volume_value_changed"]
+[connection signal="value_changed" from="HBoxContainer3/SFXAudioVolume" to="." method="_on_sfx_audio_volume_value_changed"]
