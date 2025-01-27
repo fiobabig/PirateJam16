@@ -41,18 +41,21 @@ func _on_victory_good():
 	_hide_all()
 
 	victory_good.visible = true
+	AudioService.victory.play()
 
 
 func _on_victory_evil():
 	_hide_all()
 
 	victory_evil.visible = true
+	AudioService.victory.play()
 
 
 func _on_unbonded(bearer: BearerResource):
 	_hide_all()
 
 	loss_display.visible = true
+	AudioService.bond_broken.play()
 
 
 func _on_bearer_died(previous: BearerResource, next: BearerResource):

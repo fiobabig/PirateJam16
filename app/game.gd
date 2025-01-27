@@ -12,7 +12,6 @@ func _ready() -> void:
 	GameService.go_to_main_menu.connect(_on_go_to_main_menu)
 
 	AudioService.game_music.play()
-	#AudioService.game_music.pl
 
 
 func _on_go_to_main_menu():
@@ -27,7 +26,7 @@ func _on_started():
 	BearerService.create()
 	EventService.next()
 
-	AudioService.game_music.stop()
-
 	game_ui.visible = true
 	main_menu.visible = false
+
+	AudioService.game_start_sfx.play()

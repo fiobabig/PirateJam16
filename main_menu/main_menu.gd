@@ -36,10 +36,18 @@ func _on_close_credits_pressed() -> void:
 	credits.visible = false
 
 
-func _on_audio_volume_value_changed(value: float) -> void:
+func _on_master_audio_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
 
 
 func _on_begin_pressed() -> void:
 	tutorial.visible = false
 	GameService.start()
+
+
+func _on_music_audio_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
+
+
+func _on_sfx_audio_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound Effects"), linear_to_db(value))

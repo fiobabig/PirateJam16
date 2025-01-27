@@ -50,11 +50,13 @@ func _on_start_decision(decision: Decision):
 func _on_option_1_pressed() -> void:
 	BearerService.update(_current_decision.options[0])
 	EventService.next()
+	AudioService.button_select.play()
 
 
 func _on_option_2_pressed() -> void:
 	BearerService.update(_current_decision.options[1])
 	EventService.next()
+	AudioService.button_select.play()
 
 
 func _on_option_1_mouse_entered() -> void:
