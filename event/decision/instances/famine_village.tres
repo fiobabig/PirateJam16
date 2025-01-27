@@ -7,7 +7,7 @@
 script = ExtResource("1_jtpv3")
 bravery = 0
 compassion = 70
-justice = 0
+justice = 5
 temperance = 0
 text = "Donate your supplies to help the villagers."
 
@@ -15,8 +15,8 @@ text = "Donate your supplies to help the villagers."
 script = ExtResource("1_jtpv3")
 bravery = 0
 compassion = -30
-justice = 0
-temperance = -10
+justice = -5
+temperance = 0
 text = "Keep your supplies for your own journey."
 
 [resource]

@@ -13,6 +13,7 @@ signal score_changed(previous: float, next: float)
 
 const SCORE_SCALE: float = .25
 
+var _current_decision: Decision
 var _current_inflection: InflectionResource
 var _current_state: State
 var _score: float = 0.0  # -100 to 100
@@ -60,9 +61,14 @@ func reset():
 func _process_decision():
 	_time_to_next_inflection = _time_to_next_inflection - 1
 
-	var decision = decisions[randi() % decisions.size()]
+	var new_decision = decisions[randi() % decisions.size()]
 
-	start_decision.emit(decision)
+	while new_decision == _current_decision:
+		new_decision = decisions[randi() % decisions.size()]
+
+	_current_decision = new_decision
+
+	start_decision.emit(new_decision)
 
 
 func _process_inflection():

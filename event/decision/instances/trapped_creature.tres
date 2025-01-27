@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_1r6h7")
-bravery = 30
-compassion = 60
+bravery = 0
+compassion = 45
 justice = 0
 temperance = 0
 text = "Free the creature and guide it to safety."

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dfe552kmae33y"]
+[gd_scene load_steps=37 format=3 uid="uid://dfe552kmae33y"]
 
 [ext_resource type="Script" path="res://event/service/event_service.gd" id="1_ima1m"]
 [ext_resource type="Script" path="res://event/decision/decision.gd" id="2_2bn4x"]
@@ -28,12 +28,16 @@
 [ext_resource type="Resource" uid="uid://cuhge6b0eaepy" path="res://event/decision/instances/trapped_creature.tres" id="24_r7o26"]
 [ext_resource type="Resource" uid="uid://hbyurpvk06jb" path="res://event/decision/instances/unattended_cart.tres" id="25_5gjhr"]
 [ext_resource type="Resource" uid="uid://v8k1ueu7htya" path="res://event/decision/instances/wealthy_noble.tres" id="26_0c76i"]
-[ext_resource type="Resource" uid="uid://dnk7oq0pl5ytt" path="res://event/decision/instances/wound_solidier.tres" id="27_4y6lg"]
+[ext_resource type="Resource" uid="uid://dnk7oq0pl5ytt" path="res://event/decision/instances/hungry_begger.tres" id="27_4y6lg"]
+[ext_resource type="Resource" uid="uid://dmrcpnismc7oh" path="res://event/decision/instances/alley_thief.tres" id="28_ouv1q"]
+[ext_resource type="Resource" uid="uid://nummuhb4p078" path="res://event/decision/instances/scolded_child.tres" id="29_8pjlp"]
 [ext_resource type="Resource" uid="uid://cpcrjh6em67k7" path="res://event/inflection/instances/compassion_inflection.tres" id="30_4t43j"]
+[ext_resource type="Resource" uid="uid://bhqyxotkat3lu" path="res://event/decision/instances/solidier_thief.tres" id="30_bsjl1"]
+[ext_resource type="Resource" uid="uid://dncbt5imdv71x" path="res://event/decision/instances/unknown_illness.tres" id="31_kfk6v"]
 [ext_resource type="Resource" uid="uid://b0fi1q2vmhhi4" path="res://event/inflection/instances/justice_inflection.tres" id="31_m8y41"]
 [ext_resource type="Resource" uid="uid://c4vg6okh1ljai" path="res://event/inflection/instances/temperance_inflection.tres" id="32_p630p"]
 
 [node name="EventService" type="Node"]
 script = ExtResource("1_ima1m")
-decisions = Array[ExtResource("2_2bn4x")]([ExtResource("3_8jssc"), ExtResource("4_lkpb6"), ExtResource("5_wfr4y"), ExtResource("6_yt012"), ExtResource("7_jyca2"), ExtResource("8_68e8b"), ExtResource("9_ub7jj"), ExtResource("10_qjhpe"), ExtResource("11_eq86s"), ExtResource("12_mwpy1"), ExtResource("13_3y0v1"), ExtResource("14_4g205"), ExtResource("5_44tad"), ExtResource("16_46p0e"), ExtResource("17_dawo5"), ExtResource("18_00l5e"), ExtResource("19_w488t"), ExtResource("20_7nsgg"), ExtResource("21_xihad"), ExtResource("22_aelmv"), ExtResource("23_fmvmq"), ExtResource("24_r7o26"), ExtResource("25_5gjhr"), ExtResource("26_0c76i"), ExtResource("27_4y6lg")])
+decisions = Array[ExtResource("2_2bn4x")]([ExtResource("3_8jssc"), ExtResource("4_lkpb6"), ExtResource("5_wfr4y"), ExtResource("6_yt012"), ExtResource("7_jyca2"), ExtResource("8_68e8b"), ExtResource("9_ub7jj"), ExtResource("10_qjhpe"), ExtResource("11_eq86s"), ExtResource("12_mwpy1"), ExtResource("13_3y0v1"), ExtResource("14_4g205"), ExtResource("5_44tad"), ExtResource("16_46p0e"), ExtResource("17_dawo5"), ExtResource("18_00l5e"), ExtResource("19_w488t"), ExtResource("20_7nsgg"), ExtResource("21_xihad"), ExtResource("22_aelmv"), ExtResource("23_fmvmq"), ExtResource("24_r7o26"), ExtResource("25_5gjhr"), ExtResource("26_0c76i"), ExtResource("27_4y6lg"), ExtResource("28_ouv1q"), ExtResource("29_8pjlp"), ExtResource("30_bsjl1"), ExtResource("31_kfk6v")])
 inflections = Array[ExtResource("5_x002a")]([ExtResource("6_85vka"), ExtResource("30_4t43j"), ExtResource("31_m8y41"), ExtResource("32_p630p")])

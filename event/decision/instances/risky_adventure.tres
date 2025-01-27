@@ -5,18 +5,18 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_p5q0u")
-bravery = 100
+bravery = 50
 compassion = 0
 justice = 0
-temperance = 0
+temperance = -30
 text = "Join the adventure despite the risks."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_p5q0u")
-bravery = 0
+bravery = -40
 compassion = 0
 justice = 0
-temperance = 50
+temperance = 60
 text = "Decline and choose a safer path."
 
 [resource]

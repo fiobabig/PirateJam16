@@ -5,19 +5,19 @@
 
 [sub_resource type="Resource" id="Resource_k7bre"]
 script = ExtResource("1_rgk7i")
-bravery = 60
-compassion = 10
+bravery = -55
+compassion = -55
 justice = 0
 temperance = 0
-text = "Brave the cave and seek the fortune."
+text = "Lead the creatures to the village for them to kil."
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_rgk7i")
-bravery = 20
+bravery = -50
 compassion = 0
 justice = -50
-temperance = -20
-text = "Spread false rumors to deter others and search alone."
+temperance = 0
+text = "Spread false rumors to entice others to kill the beast for you."
 
 [resource]
 script = ExtResource("2_7nlll")
