@@ -18,49 +18,35 @@ color = Color(0.12549, 0.12549, 0.12549, 0.752941)
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Spacing Left" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DecisionPanelContainer"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="AudioSettings" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_abl72")]
+[node name="AudioSettings" parent="CenterContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_abl72")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="MainMenu" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="MainMenu" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Main Menu"
 
-[node name="Close" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Close" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Close"
 
-[node name="Spacing Right" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
 
 [connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -3,12 +3,14 @@ extends Node2D
 @onready var game_ui: CanvasItem = %GameUI
 @onready var main_menu: CanvasItem = %MainMenu
 @onready var escape_menu: EscapeMenu = %EscapeMenu
+@onready var screen_transition: CanvasItem = %ScreenTransition
 
 
 func _ready() -> void:
 	escape_menu.visible = false
 	game_ui.visible = false
 	main_menu.visible = true
+	screen_transition.visible = false
 
 	escape_menu.closed.connect(_on_escape_menu_closed)
 
@@ -24,6 +26,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_go_to_main_menu():
+	await GameService.start_screen_transition()
+
 	BearerService.reset()
 	EventService.reset()
 

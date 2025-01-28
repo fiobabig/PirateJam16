@@ -13,13 +13,15 @@ func _ready() -> void:
 	skill_selector.selected.connect(_on_skill_selected)
 
 
-func _on_bearer_died(previous: BearerResource, next: BearerResource):
-	label.text = previous.name + " has gone to their ancestors"
-	portrait.texture = previous.portrait
+func _on_bearer_died(dead_bearer: BearerResource):
+	label.text = dead_bearer.name + " has gone to their ancestors"
+	portrait.texture = dead_bearer.portrait
 
 
 func _on_continue_pressed() -> void:
 	SkillService.add_skill(_selected_skill)
+	BearerService.create()
+
 	EventService.next()
 
 

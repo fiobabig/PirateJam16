@@ -20,16 +20,24 @@ func _ready() -> void:
 	EventService.unbonded.connect(_on_unbonded)
 	EventService.bearer_died.connect(_on_bearer_died)
 
+	GameService.started.connect(_on_started)
+
 
 func _on_start_decision(decision: Decision):
+	if not decision_display.visible:
+		await GameService.start_screen_transition()
+
 	_hide_all()
 
 	#bearer_display.visible = true
+
 	decision_display.visible = true
 	right_panel.visible = true
 
 
 func _on_start_inflection(inflection: InflectionResource, score_delta: float):
+	await GameService.start_screen_transition()
+
 	_hide_all()
 
 	#bearer_display.visible = true
@@ -39,6 +47,8 @@ func _on_start_inflection(inflection: InflectionResource, score_delta: float):
 
 
 func _on_victory_good():
+	await GameService.start_screen_transition()
+
 	_hide_all()
 
 	victory_good.visible = true
@@ -46,6 +56,8 @@ func _on_victory_good():
 
 
 func _on_victory_evil():
+	await GameService.start_screen_transition()
+
 	_hide_all()
 
 	victory_evil.visible = true
@@ -53,17 +65,27 @@ func _on_victory_evil():
 
 
 func _on_unbonded(bearer: BearerResource):
+	await GameService.start_screen_transition()
+
 	_hide_all()
 
 	loss_display.visible = true
 	AudioService.bond_broken.play()
 
 
-func _on_bearer_died(previous: BearerResource, next: BearerResource):
+func _on_bearer_died(dead_bearer: BearerResource):
+	await GameService.start_screen_transition()
+
 	_hide_all()
 
 	bearer_died.visible = true
 	AudioService.bearer_died.play()
+
+
+func _on_started():
+	_hide_all()
+
+	decision_display.visible = true
 
 
 func _hide_all():

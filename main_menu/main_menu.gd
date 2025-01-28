@@ -17,6 +17,7 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
+	AnimationService.fade(tutorial)
 	tutorial.visible = true
 
 
@@ -45,6 +46,7 @@ func _on_close_credits_pressed() -> void:
 
 
 func _on_begin_pressed() -> void:
+	await GameService.start_screen_transition()
 	tutorial.visible = false
 	GameService.start()
 
