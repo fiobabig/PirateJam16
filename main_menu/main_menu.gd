@@ -2,8 +2,7 @@ extends Control
 
 @onready var settings: Settings = %Settings
 @onready var credits: Control = %Credits
-@onready var tutorial: Control = %Tutorial
-@onready var escape_menu: Control = %Tutorial
+@onready var tutorial: Tutorial = %Tutorial
 @onready var quit: Button = %Quit
 
 
@@ -11,6 +10,7 @@ func _ready() -> void:
 	GameService.started.connect(_on_started)
 
 	settings.closed.connect(_on_settings_close)
+	tutorial.begin.connect(_on_begin)
 
 	settings.visible = false
 	credits.visible = false
@@ -19,8 +19,10 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
-	AnimationService.fade(tutorial)
+	tutorial.reset()
 	tutorial.visible = true
+
+	AnimationService.fade(tutorial)
 
 
 func _on_started():
@@ -47,7 +49,7 @@ func _on_close_credits_pressed() -> void:
 	AudioService.button_select_menu.play()
 
 
-func _on_begin_pressed() -> void:
+func _on_begin() -> void:
 	await GameService.start_screen_transition()
 	tutorial.visible = false
 	GameService.start()
