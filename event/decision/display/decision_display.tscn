@@ -1,10 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctcsydwnhb4ii"]
+[gd_scene load_steps=11 format=3 uid="uid://ctcsydwnhb4ii"]
 
 [ext_resource type="Script" path="res://event/decision/display/decision_display.gd" id="1_340pq"]
 [ext_resource type="PackedScene" uid="uid://dkjg3w1w33wwy" path="res://event/decision/impact/stat_impact.tscn" id="2_ipp4m"]
+[ext_resource type="Shader" path="res://shaders/dissolve.gdshader" id="2_pqr54"]
 [ext_resource type="Texture2D" uid="uid://ck0mihd660pxl" path="res://assets/stats/justice.png" id="4_l0x1s"]
 [ext_resource type="Texture2D" uid="uid://cwcs2u80dgq3r" path="res://assets/stats/compassion.png" id="5_c6yao"]
 [ext_resource type="Texture2D" uid="uid://bd4r3hnrm5d4l" path="res://assets/stats/temperance.png" id="6_cv0rb"]
+
+[sub_resource type="Gradient" id="Gradient_inxgb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ywte5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orho4"]
+color_ramp = SubResource("Gradient_inxgb")
+noise = SubResource("FastNoiseLite_ywte5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mii5"]
+shader = ExtResource("2_pqr54")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/modulate = Color(0.137255, 0.137255, 0.137255, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_orho4")
 
 [node name="DecisionDisplay" type="MarginContainer"]
 anchors_preset = 15
@@ -31,6 +46,7 @@ theme_override_constants/separation = 20
 
 [node name="Description" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0mii5")
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_type_variation = &"DarkLabel"

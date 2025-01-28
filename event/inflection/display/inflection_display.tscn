@@ -36,11 +36,13 @@ theme_type_variation = &"DarkLabel"
 text = "Inflection Description"
 autowrap_mode = 3
 
-[node name="Result" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Result" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_type_variation = &"DarkLabel"
+theme_type_variation = &"DarkRichTextLabel"
+bbcode_enabled = true
 text = "Header"
+fit_content = true
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 layout_mode = 2

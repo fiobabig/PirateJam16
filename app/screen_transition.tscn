@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv2tw0qc06ege"]
+
+[ext_resource type="Shader" path="res://shaders/dissolve.gdshader" id="1_4xtfw"]
+[ext_resource type="Script" path="res://app/screen_transition.gd" id="2_d01on"]
+
+[sub_resource type="Gradient" id="Gradient_inxgb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ywte5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orho4"]
+color_ramp = SubResource("Gradient_inxgb")
+noise = SubResource("FastNoiseLite_ywte5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vkfdc"]
+shader = ExtResource("1_4xtfw")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/modulate = Color(0.137255, 0.137255, 0.137255, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_orho4")
+
+[sub_resource type="Animation" id="Animation_esnu8"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:material:shader_parameter/modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.137255, 0.137255, 0.137255, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_13dnk"]
+resource_name = "fade_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:material:shader_parameter/modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.137255, 0.137255, 0.137255, 1), Color(0.137255, 0.137255, 0.137255, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_41ugn"]
+resource_name = "fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:material:shader_parameter/modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.137255, 0.137255, 0.137255, 0), Color(0.137255, 0.137255, 0.137255, 1), Color(0.137255, 0.137255, 0.137255, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7qqn"]
+_data = {
+"RESET": SubResource("Animation_esnu8"),
+"fade_in": SubResource("Animation_13dnk"),
+"fade_out": SubResource("Animation_41ugn")
+}
+
+[node name="ScreenTransition" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("2_d01on")
+
+[node name="Fade" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vkfdc")
+layout_mode = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g7qqn")
+}

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://b38gd62l0kgip"]
+
+[ext_resource type="Shader" path="res://shaders/dissolve.gdshader" id="1_c7osk"]
+
+[sub_resource type="Gradient" id="Gradient_inxgb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ywte5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orho4"]
+color_ramp = SubResource("Gradient_inxgb")
+noise = SubResource("FastNoiseLite_ywte5")
+
+[resource]
+shader = ExtResource("1_c7osk")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/modulate = Color(0.137255, 0.137255, 0.137255, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_orho4")

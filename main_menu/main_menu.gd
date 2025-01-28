@@ -4,6 +4,7 @@ extends Control
 @onready var credits: Control = %Credits
 @onready var tutorial: Control = %Tutorial
 @onready var escape_menu: Control = %Tutorial
+@onready var quit: Button = %Quit
 
 
 func _ready() -> void:
@@ -14,9 +15,11 @@ func _ready() -> void:
 	settings.visible = false
 	credits.visible = false
 	tutorial.visible = false
+	quit.visible = OS.get_name() != "Web"
 
 
 func _on_start_pressed() -> void:
+	AnimationService.fade(tutorial)
 	tutorial.visible = true
 
 
@@ -45,6 +48,7 @@ func _on_close_credits_pressed() -> void:
 
 
 func _on_begin_pressed() -> void:
+	await GameService.start_screen_transition()
 	tutorial.visible = false
 	GameService.start()
 

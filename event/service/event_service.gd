@@ -5,7 +5,7 @@ signal start_inflection(inflection: InflectionResource, score_delta: float)
 signal victory_good
 signal victory_evil
 signal unbonded(bearer: BearerResource)
-signal bearer_died(previous: BearerResource, next: BearerResource)
+signal bearer_died(dead_bearer: BearerResource)
 signal score_changed(previous: float, next: float)
 
 @export var decisions: Array[Decision]
@@ -104,10 +104,7 @@ func _process_lifespan() -> bool:
 	if BearerService.is_dead() == false:
 		return false
 
-	var previous = BearerService.current
-	var next = BearerService.create()
-
-	bearer_died.emit(previous, next)
+	bearer_died.emit(BearerService.current)
 
 	return true
 
@@ -135,5 +132,5 @@ func _calculate_score_delta(bearer: BearerResource, inflection: InflectionResour
 		)
 		* SCORE_SCALE
 	)
-	print("scoreD: " + str(score_delta))
+
 	return score_delta + score_delta * bond_bonus
