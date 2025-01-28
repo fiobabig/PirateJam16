@@ -55,25 +55,22 @@ layout_mode = 2
 
 [node name="Start Game" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Start Game"
 
 [node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Settings"
 
 [node name="Credits" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Credits"
 
 [node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit
 "
@@ -90,10 +87,12 @@ flip_h = true
 
 [node name="Settings" parent="." instance=ExtResource("2_b08dd")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Credits" type="PanelContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Credits"]
