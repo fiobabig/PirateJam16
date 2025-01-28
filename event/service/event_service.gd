@@ -24,6 +24,9 @@ enum State { Decision, Inflection }
 
 
 func next():
+	_process_lifespan()
+	return
+
 	match _current_state:
 		State.Decision:
 			if _process_unbonded():
@@ -101,8 +104,8 @@ func _calculate_victory() -> Victory:
 
 
 func _process_lifespan() -> bool:
-	if BearerService.is_dead() == false:
-		return false
+	#if BearerService.is_dead() == false:
+	#return false
 
 	bearer_died.emit(BearerService.current)
 

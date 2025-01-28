@@ -17,56 +17,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("1_4oy5t")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 55
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "who died and left you in charge"
 horizontal_alignment = 1
 
-[node name="MarinContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+[node name="MarinContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Circle" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer"]
+[node name="Circle" type="Sprite2D" parent="HBoxContainer/VBoxContainer/MarinContainer"]
 clip_children = 1
 position = Vector2(228, 217)
 scale = Vector2(0.745, 0.745)
 texture = ExtResource("3_2kxw2")
 
-[node name="GreyRoundWood" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer/Circle"]
+[node name="GreyRoundWood" type="Sprite2D" parent="HBoxContainer/VBoxContainer/MarinContainer/Circle"]
 position = Vector2(8.05371, -4.02686)
 scale = Vector2(1.34228, 1.34228)
 texture = ExtResource("4_a52fq")
 
-[node name="Portrait" type="Sprite2D" parent="CenterContainer/VBoxContainer/MarinContainer/Circle"]
+[node name="Portrait" type="Sprite2D" parent="HBoxContainer/VBoxContainer/MarinContainer/Circle"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_wi7fw")
 position = Vector2(2.68457, 5.36914)
 scale = Vector2(0.879404, 0.879404)
 texture = ExtResource("3_xv1bh")
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/MarinContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/MarinContainer"]
 layout_mode = 2
 texture = ExtResource("4_hgk2a")
 
-[node name="SkillSelector" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_1tv72")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="Continue" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Time to find a new bearer..."
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[node name="SkillSelector" parent="HBoxContainer" instance=ExtResource("2_1tv72")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

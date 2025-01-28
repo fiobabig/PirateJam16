@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://wrs40lu5ep7s"]
+
+[ext_resource type="Texture2D" uid="uid://0wp8ysq6nfpu" path="res://assets/icons/icon_1.png" id="1_e0bkd"]
+[ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_yh72o"]
+
+[resource]
+script = ExtResource("2_yh72o")
+name = "Cha Skill!"
+description = "Cha skill that means nothing"
+icon = ExtResource("1_e0bkd")
+value = 1

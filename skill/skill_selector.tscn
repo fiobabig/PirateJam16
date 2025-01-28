@@ -14,6 +14,7 @@ skill_display_scene = ExtResource("2_xsc1i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -23,3 +24,4 @@ horizontal_alignment = 1
 [node name="SkillList" type="VBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 10
