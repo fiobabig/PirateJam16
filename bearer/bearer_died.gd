@@ -16,7 +16,6 @@ func _ready() -> void:
 func _on_bearer_died(previous: BearerResource, next: BearerResource):
 	label.text = previous.name + " has gone to their ancestors"
 	portrait.texture = previous.portrait
-	AudioService.bearer_died.play()
 
 
 func _on_continue_pressed() -> void:

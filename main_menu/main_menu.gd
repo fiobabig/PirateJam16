@@ -26,20 +26,52 @@ func _on_started():
 
 func _on_settings_pressed() -> void:
 	settings.visible = true
+	AudioService.button_select_menu.play()
 
 
 func _on_settings_close() -> void:
 	settings.visible = false
+	AudioService.button_select_menu.play()
 
 
 func _on_credits_pressed() -> void:
 	credits.visible = true
+	AudioService.button_select_menu.play()
 
 
 func _on_close_credits_pressed() -> void:
 	credits.visible = false
+	AudioService.button_select_menu.play()
 
 
 func _on_begin_pressed() -> void:
 	tutorial.visible = false
 	GameService.start()
+
+
+func _on_close_credits_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_start_game_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_settings_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_credits_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_begin_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_quit_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()

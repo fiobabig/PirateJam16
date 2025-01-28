@@ -62,5 +62,7 @@ text = "Close"
 layout_mode = 2
 size_flags_horizontal = 3
 
+[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]

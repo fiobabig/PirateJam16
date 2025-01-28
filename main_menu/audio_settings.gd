@@ -29,3 +29,15 @@ func _on_volume_changed(bus: String, value: float):
 			music.value = value
 		"Sound Effects":
 			sfx.value = value
+
+
+func _on_master_audio_volume_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_music_audio_volume_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
+
+
+func _on_sfx_audio_volume_mouse_entered() -> void:
+	AudioService.button_mouse_over.play()
