@@ -4,7 +4,9 @@ signal volume_changed(bus: String, value: float)
 
 @onready var game_music: AudioStreamPlayer = %GameMusic
 @onready var game_start_sfx: AudioStreamPlayer = %GameStartSFX
-@onready var button_select: AudioStreamPlayer = %ButtonSelect
+@onready var button_mouse_over: AudioStreamPlayer = %ButtonMouseOver
+@onready var button_select_menu: AudioStreamPlayer = %ButtonSelectMenu
+@onready var button_select_decision: AudioStreamPlayer = %ButtonSelectDecision
 @onready var write_decision: AudioStreamPlayer = %WriteDecision
 @onready var change_decision: AudioStreamPlayer = %ChangeDecision
 @onready var bond_broken: AudioStreamPlayer = %BondBroken
@@ -18,7 +20,7 @@ func _on_change_decision_finished() -> void:
 	AudioService.write_decision.play()
 
 
-func _on_button_select_finished() -> void:
+func _on_button_select_decision_finished() -> void:
 	AudioService.change_decision.play()
 
 
@@ -38,3 +40,7 @@ func get_volume(bus: String) -> float:
 		return _bus_values[bus]
 
 	return 1.0
+
+
+func _on_game_music_finished() -> void:
+	AudioService.game_music.play()

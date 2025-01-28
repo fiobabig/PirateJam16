@@ -50,13 +50,13 @@ func _on_start_decision(decision: Decision):
 func _on_option_1_pressed() -> void:
 	BearerService.update(_current_decision.options[0])
 	EventService.next()
-	AudioService.button_select.play()
+	AudioService.button_select_decision.play()
 
 
 func _on_option_2_pressed() -> void:
 	BearerService.update(_current_decision.options[1])
 	EventService.next()
-	AudioService.button_select.play()
+	AudioService.button_select_decision.play()
 
 
 func _on_option_1_mouse_entered() -> void:
@@ -66,6 +66,7 @@ func _on_option_1_mouse_entered() -> void:
 	justice_impact.impact_scale = abs(option.justice) / 25.0
 	compassion_impact.impact_scale = abs(option.compassion) / 25.0
 	temperance_impact.impact_scale = abs(option.temperance) / 25.0
+	AudioService.button_mouse_over.play()
 
 
 func _on_option_2_mouse_entered() -> void:
@@ -75,6 +76,7 @@ func _on_option_2_mouse_entered() -> void:
 	justice_impact.impact_scale = abs(option.justice) / 25.0
 	compassion_impact.impact_scale = abs(option.compassion) / 25.0
 	temperance_impact.impact_scale = abs(option.temperance) / 25.0
+	AudioService.button_mouse_over.play()
 
 
 func _on_option_mouse_exited() -> void:

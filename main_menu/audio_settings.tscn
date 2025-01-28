@@ -66,6 +66,9 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
+[connection signal="mouse_entered" from="HBoxContainer/MasterAudioVolume" to="." method="_on_master_audio_volume_mouse_entered"]
 [connection signal="value_changed" from="HBoxContainer/MasterAudioVolume" to="." method="_on_master_audio_volume_value_changed"]
+[connection signal="mouse_entered" from="HBoxContainer4/MusicAudioVolume" to="." method="_on_music_audio_volume_mouse_entered"]
 [connection signal="value_changed" from="HBoxContainer4/MusicAudioVolume" to="." method="_on_music_audio_volume_value_changed"]
+[connection signal="mouse_entered" from="HBoxContainer3/SFXAudioVolume" to="." method="_on_sfx_audio_volume_mouse_entered"]
 [connection signal="value_changed" from="HBoxContainer3/SFXAudioVolume" to="." method="_on_sfx_audio_volume_value_changed"]

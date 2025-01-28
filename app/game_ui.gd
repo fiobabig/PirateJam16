@@ -35,6 +35,7 @@ func _on_start_inflection(inflection: InflectionResource, score_delta: float):
 	#bearer_display.visible = true
 	inflection_display.visible = true
 	right_panel.visible = true
+	AudioService.game_start_sfx.play()
 
 
 func _on_victory_good():
@@ -62,6 +63,7 @@ func _on_bearer_died(previous: BearerResource, next: BearerResource):
 	_hide_all()
 
 	bearer_died.visible = true
+	AudioService.bearer_died.play()
 
 
 func _hide_all():
