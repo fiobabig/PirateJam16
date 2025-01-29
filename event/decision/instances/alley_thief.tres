@@ -9,7 +9,7 @@ bravery = -70
 compassion = 0
 justice = 0
 temperance = 0
-text = "Hide and wait for the thief to leave."
+text = "Hide and wait for the thief to leave"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_5xhow")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -65
 justice = 0
 temperance = 0
-text = "Join the thief in robbing the woman."
+text = "Join the thief in robbing the woman"
 
 [resource]
 script = ExtResource("2_avp2m")
-description = "In a narrow alley, you come across a thief robbing an elderly woman."
+description = "In a narrow alley, [BEARER] comes across a thief robbing an elderly woman"
 options = Array[ExtResource("1_5xhow")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

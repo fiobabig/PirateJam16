@@ -9,7 +9,7 @@ bravery = 0
 compassion = 0
 justice = -10
 temperance = -65
-text = "Take the heirlooms to sell."
+text = "Take the heirlooms to sell"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_mkoc0")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 55
 temperance = 30
-text = "Take the heirlooms to the museum."
+text = "Take the heirlooms to a museum"
 
 [resource]
 script = ExtResource("2_6ors8")
-description = "While exploring a ruined temple, you come across a treasure chest filled with historic heirlooms."
+description = "While exploring a ruined temple, [BEARER] comes across a treasure chest filled with historic heirlooms"
 options = Array[ExtResource("1_mkoc0")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

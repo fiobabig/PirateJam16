@@ -5,6 +5,10 @@ extends MarginContainer
 @onready var portrait: Sprite2D = %Portrait
 @onready var skill_selector: SkillSelector = %SkillSelector
 
+const _reasons: Array[String] = [
+	"fell in a lake and drown", "fell in battle", "lost a duel", "died of old age", "succumbed to disease", "was poisoned by a rival", "was ravaged by a wild beast"
+]
+var _reason: String
 var _selected_skill: Enums.Skills
 
 
@@ -14,7 +18,12 @@ func _ready() -> void:
 
 
 func _on_bearer_died(dead_bearer: BearerResource):
-	label.text = dead_bearer.name + " has gone to their ancestors"
+	var previous = _reason
+
+	while previous == _reason:
+		_reason = _reasons[randi() % _reasons.size()]
+
+	label.text = dead_bearer.name + " " + _reason
 	portrait.texture = dead_bearer.portrait
 	skill_selector.update()
 

@@ -9,7 +9,7 @@ bravery = -55
 compassion = -55
 justice = 0
 temperance = 0
-text = "Lead the creatures to the village for them to kil."
+text = "Lead the creatures to the village so you can grab the treasure"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_rgk7i")
@@ -17,9 +17,9 @@ bravery = -50
 compassion = 0
 justice = -50
 temperance = 0
-text = "Spread false rumors to entice others to kill the beast for you."
+text = "Spread false rumors to entice others to kill the beast"
 
 [resource]
 script = ExtResource("2_7nlll")
-description = "You hear a rumor about a hidden fortune in a nearby cave, but it's home to dangerous creatures."
+description = "[BEARER] hears a rumor about a hidden fortune in a nearby cave, but it's home to dangerous creatures"
 options = Array[ExtResource("1_rgk7i")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

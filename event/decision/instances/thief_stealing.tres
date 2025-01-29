@@ -9,7 +9,7 @@ bravery = 0
 compassion = 0
 justice = -45
 temperance = 0
-text = "Look the other way and let the thief escape."
+text = "Look the other way and let the thief escape"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_8cf1n")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 0
 temperance = -70
-text = "Quietly take some of the stolen goods for yourself."
+text = "Quietly take some of the stolen goods for themself"
 
 [resource]
 script = ExtResource("2_oqrb8")
-description = "You witness a thief stealing from a marketplace stall."
+description = "[BEARER] witnesses a thief stealing from a marketplace stall"
 options = Array[ExtResource("1_8cf1n")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

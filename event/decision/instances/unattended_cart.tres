@@ -9,7 +9,7 @@ bravery = 45
 compassion = 0
 justice = 0
 temperance = 50
-text = "Protect the goods from theives until the owner arrives."
+text = "Protect the goods until the owner arrives"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_oxufa")
@@ -17,9 +17,9 @@ bravery = -25
 compassion = 0
 justice = 0
 temperance = -10
-text = "Steal the entire cart and sell the goods for profit."
+text = "Steal the entire cart and sell the goods for profit"
 
 [resource]
 script = ExtResource("2_v4lnd")
-description = "You find an unattended cart loaded with valuable goods."
+description = "[BEARER] finds an unattended cart loaded with valuable goods"
 options = Array[ExtResource("1_oxufa")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

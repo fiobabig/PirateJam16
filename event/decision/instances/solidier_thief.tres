@@ -9,7 +9,7 @@ bravery = -65
 compassion = 0
 justice = 0
 temperance = 0
-text = "Turn a blind eye, fearing retribution."
+text = "Turn a blind eye, fearing retribution"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_5pons")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 10
 temperance = 0
-text = "Report the theft to your commanding officer."
+text = "Report the theft to your commanding officer"
 
 [resource]
 script = ExtResource("2_3tyoy")
-description = "You witness a fellow soldier stealing supplies."
+description = "[BEARER] witnesses a fellow soldier stealing supplies"
 options = Array[ExtResource("1_5pons")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

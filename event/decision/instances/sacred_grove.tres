@@ -9,7 +9,7 @@ bravery = 40
 compassion = 0
 justice = 65
 temperance = 0
-text = "Confront the poachers and stop them."
+text = "Confront the poachers and stop them"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_jqai3")
@@ -17,9 +17,9 @@ bravery = -20
 compassion = 0
 justice = 0
 temperance = -15
-text = "Take a bribe from the poachers."
+text = "Take a bribe from the poachers"
 
 [resource]
 script = ExtResource("2_y761k")
-description = "You come across a sacred grove being desecrated by poachers."
+description = "[BEARER] comes across a sacred grove being desecrated by poachers"
 options = Array[ExtResource("1_jqai3")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

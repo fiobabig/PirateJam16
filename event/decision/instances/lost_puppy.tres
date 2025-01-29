@@ -9,7 +9,7 @@ bravery = 0
 compassion = 30
 justice = -25
 temperance = -25
-text = "Take the puppy in and care for it."
+text = "Take the puppy in and care for it"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_busxj")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 20
 justice = 0
 temperance = 25
-text = "Try to find the puppy's owner."
+text = "Try to find the puppy's owner"
 
 [resource]
 script = ExtResource("2_08o5n")
-description = "A lost puppy follows you home"
+description = "A lost puppy follows [BEARER] home"
 options = Array[ExtResource("1_busxj")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

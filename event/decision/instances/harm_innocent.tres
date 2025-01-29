@@ -21,5 +21,5 @@ text = "Join the plot and benefit from its success."
 
 [resource]
 script = ExtResource("2_trpa7")
-description = "You overhear a plan to harm an innocent person."
+description = "[BEARER] overhears a plan to harm an innocent person"
 options = Array[ExtResource("1_g457c")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

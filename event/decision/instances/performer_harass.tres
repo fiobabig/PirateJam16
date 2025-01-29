@@ -9,7 +9,7 @@ bravery = 70
 compassion = 5
 justice = 45
 temperance = 0
-text = "Step in and defend the performer."
+text = "Step in and defend the performer"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_4rhmj")
@@ -17,9 +17,9 @@ bravery = -15
 compassion = -15
 justice = -65
 temperance = 0
-text = "Join in harrassing the performer."
+text = "Join in harrassing the performer"
 
 [resource]
 script = ExtResource("2_aw5pa")
-description = "You witness a street performer being harassed by a group of troublemakers."
+description = "[BEARER] witnesses a street performer being harassed by a group of troublemakers"
 options = Array[ExtResource("1_4rhmj")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

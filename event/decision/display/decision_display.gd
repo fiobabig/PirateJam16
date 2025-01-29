@@ -21,7 +21,7 @@ func _ready() -> void:
 func _on_start_decision(decision: Decision):
 	_current_decision = decision
 
-	description.text = decision.description
+	description.text = decision.description.replace("[BEARER]", BearerService.current.name)
 	option1.text = decision.options[0].text
 	option2.text = decision.options[1].text
 

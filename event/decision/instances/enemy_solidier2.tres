@@ -9,7 +9,7 @@ bravery = 30
 compassion = 40
 justice = 0
 temperance = 0
-text = "Tend to the soldier's wounds, despite being enemies."
+text = "Tend to the soldier's wounds, despite being enemies"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_rq4ky")
@@ -17,9 +17,9 @@ bravery = -30
 compassion = -10
 justice = 20
 temperance = 0
-text = "Slay the soldier and continue fighting."
+text = "Slay the soldier and continue fighting"
 
 [resource]
 script = ExtResource("2_otsrr")
-description = "You find an injured enemy soldier on the battlefield."
+description = "[BEARER] finds an injured enemy soldier on the battlefield"
 options = Array[ExtResource("1_rq4ky")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])
