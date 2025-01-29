@@ -17,9 +17,9 @@ bravery = -60
 compassion = 0
 justice = 0
 temperance = 10
-text = "Walk away, worried that intervening might cause trouble for you"
+text = "Walk away and avoid trouble"
 
 [resource]
 script = ExtResource("2_kxxv0")
-description = "In the market, you witness a merchant unfairly scolding a poor child for something they didn't do."
+description = "In the market, [BEARER] witnesses a merchant unfairly scolding a poor child for something they didn't do"
 options = Array[ExtResource("1_rk06h")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

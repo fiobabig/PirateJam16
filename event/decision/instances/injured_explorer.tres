@@ -9,7 +9,7 @@ bravery = 0
 compassion = 60
 justice = 0
 temperance = 15
-text = "Administer first aid and help the explorer."
+text = "Administer first aid and help the explorer"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_wqypf")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -70
 justice = -55
 temperance = -45
-text = "Rob the explorer and leave them for dead."
+text = "Rob the explorer and leave them for dead"
 
 [resource]
 script = ExtResource("2_4kito")
-description = "While exploring a cave, you find an injured explorer."
+description = "While exploring a cave, [BEARER] finds an injured explorer"
 options = Array[ExtResource("1_wqypf")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

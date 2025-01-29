@@ -9,7 +9,7 @@ bravery = 35
 compassion = 0
 justice = 0
 temperance = -50
-text = "Study the scroll to uncover its secrets."
+text = "Study the scroll to uncover its secrets"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_sv3p4")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 0
 temperance = 70
-text = "Safeguard the scroll to prevent misuse."
+text = "Safeguard the scroll to prevent misuse"
 
 [resource]
 script = ExtResource("2_y6xwh")
-description = "You find a magical scroll with unknown powers."
+description = "[BEARER] finds a magical scroll with unknown powers"
 options = Array[ExtResource("1_sv3p4")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

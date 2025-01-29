@@ -9,7 +9,7 @@ bravery = 60
 compassion = 0
 justice = -40
 temperance = -20
-text = "Study the forbidden texts to gain powerful insights."
+text = "Study the forbidden texts to gain powerful insights"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_p46wh")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 30
 temperance = 40
-text = "Report the library's location to the authorities to prevent misuse."
+text = "Report the library's location to the authorities to prevent misuse"
 
 [resource]
 script = ExtResource("2_v7uki")
-description = "You come across an ancient library with forbidden knowledge."
+description = "[BEARER] comes across an ancient library with forbidden knowledge"
 options = Array[ExtResource("1_p46wh")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

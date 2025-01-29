@@ -9,7 +9,7 @@ bravery = 0
 compassion = 0
 justice = 70
 temperance = 5
-text = "Refuse the offer and tell the truth in court."
+text = "Refuse the offer and tell the truth in court"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_ob33w")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = -70
 temperance = -5
-text = "Accept the money and lie in court."
+text = "Accept the money and lie in court"
 
 [resource]
 script = ExtResource("2_2xgye")
-description = "A wealthy noble offers you a large sum to falsely testify in court."
+description = "A wealthy noble offers [BEARER] a large sum to falsely testify in court"
 options = Array[ExtResource("1_ob33w")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

@@ -9,7 +9,7 @@ bravery = 5
 compassion = 0
 justice = 60
 temperance = 0
-text = "Inform the authorities about the plot."
+text = "Inform the authorities about the plot"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_qvvod")
@@ -17,9 +17,9 @@ bravery = -10
 compassion = 0
 justice = -20
 temperance = 35
-text = "Stay silent to avoid getting involved."
+text = "Stay silent to avoid getting involved"
 
 [resource]
 script = ExtResource("2_87m6s")
-description = "You overhear a conversation about a plot to rob a bank."
+description = "[BEARER] overhears a conversation about a plot to rob a bank"
 options = Array[ExtResource("1_qvvod")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

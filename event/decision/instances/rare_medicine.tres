@@ -9,7 +9,7 @@ bravery = 0
 compassion = -5
 justice = 0
 temperance = -40
-text = "Harvest the herb to sell."
+text = "Harvest the herb to sell"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_35qel")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 65
 justice = 50
 temperance = 0
-text = "Inform the local healer of the herbs location."
+text = "Inform the local healer of the herbs location"
 
 [resource]
 script = ExtResource("2_ttv4h")
-description = "You discover a rare medicinal herb of high value."
+description = "[BEARER] discovers a rare medicinal herb of high value"
 options = Array[ExtResource("1_35qel")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

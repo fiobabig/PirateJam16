@@ -9,7 +9,7 @@ bravery = 0
 compassion = 55
 justice = 0
 temperance = 0
-text = "Offer him a portion of your bread."
+text = "Offer him a portion of their bread"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_sytom")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -45
 justice = 0
 temperance = 0
-text = "Turn him away, advising him to find work to earn his meal."
+text = "Turn him away, advising him to find work to earn his meal"
 
 [resource]
 script = ExtResource("2_sdekk")
-description = "A beggar approaches you on a bustling village street, looking weary and hungry."
+description = "A beggar approaches [BEARER] on a bustling village street, looking weary and hungry"
 options = Array[ExtResource("1_sytom")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

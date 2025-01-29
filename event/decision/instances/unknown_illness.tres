@@ -9,7 +9,7 @@ bravery = 0
 compassion = 55
 justice = 0
 temperance = 0
-text = "Spend extra time and resources to treat her, despite her inability to pay."
+text = "Spend extra time and resources to treat her, despite her inability to pay"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_hdvyt")
@@ -17,9 +17,9 @@ bravery = -35
 compassion = -60
 justice = 0
 temperance = 0
-text = "Avoid treating her out of fear that the illness might spread to you and your family."
+text = "Avoid treating her out of fear that the illness might spread to you and your family"
 
 [resource]
 script = ExtResource("2_q4twr")
-description = "As a healer in your village, you encounter a young woman suffering from an unknown illness."
+description = "Working as a healer in their village, [BEARER] encounters a young woman suffering from an unknown illness"
 options = Array[ExtResource("1_hdvyt")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

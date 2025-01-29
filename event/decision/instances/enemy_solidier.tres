@@ -21,5 +21,5 @@ text = "Ignore the enemy and continue fighting."
 
 [resource]
 script = ExtResource("2_g5j1a")
-description = "During a battle, you see an enemy soldier wounded alive, but mortally wounded."
+description = "During a battle, [BEARER] sees an enemy soldier wounded alive, but mortally wounded."
 options = Array[ExtResource("1_6u2kf")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

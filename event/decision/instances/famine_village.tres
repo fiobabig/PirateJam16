@@ -9,7 +9,7 @@ bravery = 0
 compassion = 70
 justice = 5
 temperance = 0
-text = "Donate your supplies to help the villagers."
+text = "Donate their supplies to help the villagers"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_jtpv3")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -30
 justice = -5
 temperance = 0
-text = "Keep your supplies for your own journey."
+text = "Keep their supplies for their own journey"
 
 [resource]
 script = ExtResource("2_uw8tc")
-description = "In a remote village, you learn of a famine affecting the residents."
+description = "In a remote village, [BEARER] learns of a famine affecting the residents"
 options = Array[ExtResource("1_jtpv3")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

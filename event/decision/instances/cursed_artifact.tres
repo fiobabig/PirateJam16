@@ -9,7 +9,7 @@ bravery = 65
 compassion = 10
 justice = 40
 temperance = 0
-text = "Destroy the artifact to break the curse."
+text = "Destroy the artifact to break the curse"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_voawh")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -35
 justice = -15
 temperance = 0
-text = "Plant the artifact so someone will find it."
+text = "Plant the artifact so someone will find it"
 
 [resource]
 script = ExtResource("2_1omhg")
-description = "You find a cursed artifact that brings misfortune to its holder."
+description = "[BEARER] finds a cursed artifact that brings misfortune to its holder"
 options = Array[ExtResource("1_voawh")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

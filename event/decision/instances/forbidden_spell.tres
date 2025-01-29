@@ -9,7 +9,7 @@ bravery = 15
 compassion = 0
 justice = 0
 temperance = -60
-text = "Accept the offer to learn the spell."
+text = "Accept the offer to learn the spell"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_1hjqf")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = 0
 justice = 25
 temperance = 45
-text = "Refuse the offer and report the sorcerer to the council."
+text = "Refuse the offer and report the sorcerer to the council"
 
 [resource]
 script = ExtResource("2_r2r4a")
-description = "A powerful sorcerer offers to teach you a forbidden spell."
+description = "A powerful sorcerer offers to teach [BEARER] a forbidden spell"
 options = Array[ExtResource("1_1hjqf")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])

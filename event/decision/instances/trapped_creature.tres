@@ -9,7 +9,7 @@ bravery = 0
 compassion = 45
 justice = 0
 temperance = 0
-text = "Free the creature and guide it to safety."
+text = "Free the creature and guide it to safety"
 
 [sub_resource type="Resource" id="Resource_u082u"]
 script = ExtResource("1_1r6h7")
@@ -17,9 +17,9 @@ bravery = 0
 compassion = -40
 justice = 0
 temperance = 0
-text = "Leave the creature and continue exploring."
+text = "Leave the creature and continue exploring"
 
 [resource]
 script = ExtResource("2_5obfh")
-description = "While exploring a cave, you find a trapped creature in need of rescue."
+description = "While exploring a cave, [BEARER] finds a trapped creature in need of rescue"
 options = Array[ExtResource("1_1r6h7")]([SubResource("Resource_k7bre"), SubResource("Resource_u082u")])
