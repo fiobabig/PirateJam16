@@ -16,8 +16,12 @@ func _ready() -> void:
 func _on_bearer_died(dead_bearer: BearerResource):
 	label.text = dead_bearer.name + " has gone to their ancestors"
 	portrait.texture = dead_bearer.portrait
+	skill_selector.update()
+
+	continue_button.visible = SkillService.has_all_skills()
 
 
+# Continue Button Press
 func _on_continue_pressed() -> void:
 	SkillService.add_skill(_selected_skill)
 	BearerService.create()

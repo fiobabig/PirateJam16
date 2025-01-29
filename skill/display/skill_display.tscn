@@ -1,46 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://kppd4qubr16d"]
+[gd_scene load_steps=5 format=3 uid="uid://kppd4qubr16d"]
 
 [ext_resource type="Script" path="res://skill/display/skill_display.gd" id="1_c1ipa"]
 [ext_resource type="Texture2D" uid="uid://b54u1dxrjccaq" path="res://assets/unknown_icon.png" id="1_lymlh"]
+[ext_resource type="Material" uid="uid://cr7atfmovmlcw" path="res://shaders/materials/greyscale_material.tres" id="2_b5u41"]
+[ext_resource type="Texture2D" uid="uid://cmwwomifeafpt" path="res://assets/icons/selected_skill.png" id="4_r24bs"]
 
 [node name="SkillDisplay" type="MarginContainer"]
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 126.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 0
 mouse_filter = 0
 script = ExtResource("1_c1ipa")
+disabled_material = ExtResource("2_b5u41")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Wrapper" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"PortraitPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 8
+theme_override_constants/separation = 10
 
-[node name="Control" type="MarginContainer" parent="HBoxContainer"]
+[node name="Control" type="MarginContainer" parent="Wrapper/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="HBoxContainer/Control"]
+[node name="Icon" type="TextureRect" parent="Wrapper/MarginContainer/HBoxContainer/Control"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_lymlh")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="Name" type="Label" parent="Wrapper/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 text = "Name"
 
-[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="Description" type="Label" parent="Wrapper/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 text = "Description"
+
+[node name="SelectedSkill" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-7, 63)
+texture = ExtResource("4_r24bs")

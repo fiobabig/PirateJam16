@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://wrs40lu5ep7s"]
+
+[ext_resource type="Texture2D" uid="uid://cfa62qtwedhfb" path="res://assets/icons/icon_3.png" id="1_3cll7"]
+[ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_utjgg"]
+
+[resource]
+script = ExtResource("2_utjgg")
+name = "Voodoo Control"
+description = "Bond always begins stronger"
+icon = ExtResource("1_3cll7")
+value = 1

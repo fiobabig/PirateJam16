@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://dp64j8ywovpnd"]
+
+[ext_resource type="Texture2D" uid="uid://b4g87umgaui8p" path="res://assets/icons/icon_7.png" id="1_b6x75"]
+[ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_siqgq"]
+
+[resource]
+script = ExtResource("2_siqgq")
+name = "Maginify Reflection"
+description = "Maginify bearer alighnment "
+icon = ExtResource("1_b6x75")
+value = 0
