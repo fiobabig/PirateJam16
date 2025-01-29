@@ -15,7 +15,8 @@ func _on_continue_pressed() -> void:
 
 func _on_start_inflection(inflection: InflectionResource, score_delta: float):
 	var alignment = "lighter" if score_delta > 0 else "darker"
-	alignment = "[outline_size=3][outline_color=#212821][color=#a0c8a0]" + alignment + "[/color][/outline_color][/outline_size]"
+	var color = "f0f0f0" if alignment == "lighter" else "5B5B5B"
+	alignment = "[outline_size=3][outline_color=#212821][color=#" + color + "]" + alignment + "[/color][/outline_color][/outline_size]"
 
 	header.text = BearerService.current.name + " has reached an inflection point in their life..."
 	description.text = inflection.description
