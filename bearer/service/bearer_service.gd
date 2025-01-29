@@ -34,6 +34,9 @@ func create() -> BearerResource:
 	# hit points
 	_current.bond = 0
 
+	if SkillService.has_skill(Enums.Skills.ExtraBond):
+		_current.bond = 50
+
 	# alignment
 	_add_inclination(_current)
 
@@ -44,7 +47,10 @@ func create() -> BearerResource:
 	_current.temperance = _random_stat()
 
 	# longevity
-	_current.lifespan = 2
+	_current.lifespan = 1 + (randi() % 3)
+
+	if SkillService.has_skill(Enums.Skills.LiveLonger):
+		_current.lifespan += 2
 
 	changed.emit(_current)
 

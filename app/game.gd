@@ -28,6 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_go_to_main_menu():
 	await GameService.start_screen_transition()
 
+	SkillService.reset()
 	BearerService.reset()
 	EventService.reset()
 

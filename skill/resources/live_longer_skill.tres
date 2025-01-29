@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://bcnvgc0liiti6"]
+
+[ext_resource type="Texture2D" uid="uid://cmie57380lmc3" path="res://assets/icons/icon_2.png" id="1_0lse4"]
+[ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_uwrwk"]
+
+[resource]
+script = ExtResource("2_uwrwk")
+name = "Draught of Life"
+description = "Bearers live longer"
+icon = ExtResource("1_0lse4")
+value = 3

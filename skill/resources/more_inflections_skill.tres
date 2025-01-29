@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://blbvwakwqnnal"]
+
+[ext_resource type="Texture2D" uid="uid://do36jogqdnqo6" path="res://assets/icons/icon_6.png" id="1_vofag"]
+[ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_wi25f"]
+
+[resource]
+script = ExtResource("2_wi25f")
+name = "Kicked to Change"
+description = "Inflections happen faster"
+icon = ExtResource("1_vofag")
+value = 2

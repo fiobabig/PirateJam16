@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfhrwg15dqri5"]
+[gd_scene load_steps=7 format=3 uid="uid://cfhrwg15dqri5"]
 
 [ext_resource type="Script" path="res://skill/service/skill_service.gd" id="1_03hnt"]
 [ext_resource type="Script" path="res://skill/skill_resource.gd" id="2_sjkbc"]
-[ext_resource type="Resource" uid="uid://bcnvgc0liiti6" path="res://skill/resources/test_skill.tres" id="3_w3anb"]
-[ext_resource type="Resource" uid="uid://wrs40lu5ep7s" path="res://skill/resources/cha_skill.tres" id="4_wpdpu"]
+[ext_resource type="Resource" uid="uid://bcnvgc0liiti6" path="res://skill/resources/live_longer_skill.tres" id="3_w3anb"]
+[ext_resource type="Resource" uid="uid://wrs40lu5ep7s" path="res://skill/resources/extra_bond_skill.tres" id="4_wpdpu"]
+[ext_resource type="Resource" uid="uid://blbvwakwqnnal" path="res://skill/resources/more_inflections_skill.tres" id="5_ix3ch"]
+[ext_resource type="Resource" uid="uid://dp64j8ywovpnd" path="res://skill/resources/bonus_points_skill.tres" id="6_nta0g"]
 
 [node name="SkillService" type="Node"]
 script = ExtResource("1_03hnt")
-skills = Array[ExtResource("2_sjkbc")]([ExtResource("3_w3anb"), ExtResource("4_wpdpu")])
+skills = Array[ExtResource("2_sjkbc")]([ExtResource("3_w3anb"), ExtResource("4_wpdpu"), ExtResource("5_ix3ch"), ExtResource("6_nta0g")])

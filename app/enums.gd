@@ -1,4 +1,4 @@
 extends Node
 
-enum Skills { TestSkill, Death }
+enum Skills { OverReflect, ExtraBond, FasterInflections, LiveLonger }
 enum Stats { Bravery, Compassion, Justice, Temperance }

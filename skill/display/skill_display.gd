@@ -9,7 +9,7 @@ signal selected(skill: Enums.Skills)
 @onready var name_label: Label = %Name
 @onready var description_label: Label = %Description
 @onready var selected_skill: Sprite2D = %SelectedSkill
-@onready var wrapper: HBoxContainer = %Wrapper
+@onready var wrapper: PanelContainer = %Wrapper
 
 var is_selected: bool:
 	get:

@@ -16,45 +16,45 @@ mouse_filter = 0
 script = ExtResource("1_c1ipa")
 disabled_material = ExtResource("2_b5u41")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Wrapper" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 theme_type_variation = &"PortraitPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Wrapper"]
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Wrapper" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="Control" type="MarginContainer" parent="PanelContainer/MarginContainer/Wrapper"]
+[node name="Control" type="MarginContainer" parent="Wrapper/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="PanelContainer/MarginContainer/Wrapper/Control"]
+[node name="Icon" type="TextureRect" parent="Wrapper/MarginContainer/HBoxContainer/Control"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_lymlh")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Wrapper"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Name" type="Label" parent="PanelContainer/MarginContainer/Wrapper/VBoxContainer"]
+[node name="Name" type="Label" parent="Wrapper/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 text = "Name"
 
-[node name="Description" type="Label" parent="PanelContainer/MarginContainer/Wrapper/VBoxContainer"]
+[node name="Description" type="Label" parent="Wrapper/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1

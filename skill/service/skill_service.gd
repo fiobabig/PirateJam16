@@ -26,3 +26,12 @@ func get_skill(skill: Enums.Skills):
 			return s
 
 	push_error("Unable to find skill: %skill" % skill)
+
+
+func has_all_skills():
+	return skills.size() == _selected_skills.size()
+
+
+func reset():
+	_selected_skills.clear()
+	selected_changed.emit(_selected_skills)

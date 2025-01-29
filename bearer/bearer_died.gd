@@ -7,10 +7,6 @@ extends MarginContainer
 
 var _selected_skill: Enums.Skills
 
-# Main display of skills you current have.
-# make the skill do something - ChuesDay
-# let them continue if all skills have been selected already.
-
 
 func _ready() -> void:
 	EventService.bearer_died.connect(_on_bearer_died)
@@ -20,9 +16,9 @@ func _ready() -> void:
 func _on_bearer_died(dead_bearer: BearerResource):
 	label.text = dead_bearer.name + " has gone to their ancestors"
 	portrait.texture = dead_bearer.portrait
-	AudioService.bearer_died.play()
-	continue_button.visible = false
 	skill_selector.update()
+
+	continue_button.visible = SkillService.has_all_skills()
 
 
 # Continue Button Press

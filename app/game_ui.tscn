@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://03ba6erh0qlg"]
+[gd_scene load_steps=13 format=3 uid="uid://03ba6erh0qlg"]
 
 [ext_resource type="PackedScene" uid="uid://d36o7vkm36qq" path="res://bearer/display/bearer_display.tscn" id="1_bifpm"]
 [ext_resource type="Script" path="res://app/game_ui.gd" id="1_piche"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqcrdepki1jks" path="res://game_over/victory_evil.tscn" id="5_1mhxg"]
 [ext_resource type="PackedScene" uid="uid://cixct64hwog81" path="res://game_over/victory_good.tscn" id="6_1vyc8"]
 [ext_resource type="PackedScene" uid="uid://boq7u2txqtl36" path="res://game_over/loss_display.tscn" id="7_ib3yt"]
+[ext_resource type="PackedScene" uid="uid://du5ycecmeq3sw" path="res://skill/selected_main.tscn" id="8_meitc"]
 [ext_resource type="PackedScene" uid="uid://cymk0jjrjss5" path="res://bearer/bearer_died.tscn" id="8_oet7t"]
 [ext_resource type="PackedScene" uid="uid://cyjs4kg2nhvy7" path="res://bearer/character_sheet/character_sheet.tscn" id="9_0kvhi"]
 [ext_resource type="PackedScene" uid="uid://bgm54ngs0h4d2" path="res://event/decision/score/score.tscn" id="10_k3wqh"]
@@ -65,6 +66,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 10
+
+[node name="SelectedMain" parent="MarginContainer/HBoxContainer/RightPanel/Score" instance=ExtResource("8_meitc")]
+layout_mode = 1
 
 [node name="BearerDied" parent="MarginContainer" instance=ExtResource("8_oet7t")]
 unique_name_in_owner = true

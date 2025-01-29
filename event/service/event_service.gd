@@ -11,21 +11,22 @@ signal score_changed(previous: float, next: float)
 @export var decisions: Array[Decision]
 @export var inflections: Array[InflectionResource]
 
+@onready var _time_to_next_inflection = _inflection_time()
+
 const SCORE_SCALE: float = .25
 
 var _current_decision: Decision
 var _current_inflection: InflectionResource
 var _current_state: State
 var _score: float = 0.0  # -100 to 100
-var _time_to_next_inflection: int = 5
 
 enum Victory { None, Good, Evil }
 enum State { Decision, Inflection }
 
 
 func next():
-	_process_lifespan()
-	return
+	#_process_lifespan() short cicurit death
+	#return
 
 	match _current_state:
 		State.Decision:
@@ -58,7 +59,7 @@ func reset():
 	_current_inflection = null
 	_current_state = State.Decision
 	_score = 0.0
-	_time_to_next_inflection = 5
+	_time_to_next_inflection = _inflection_time()
 
 
 func _process_decision():
@@ -75,7 +76,7 @@ func _process_decision():
 
 
 func _process_inflection():
-	_time_to_next_inflection = 5  #Reset this somewhere instead of 2 different spots.
+	_time_to_next_inflection = _inflection_time()
 	BearerService.decrease_lifespan()
 
 	_current_inflection = inflections[randi() % inflections.size()]
@@ -103,9 +104,16 @@ func _calculate_victory() -> Victory:
 		return Victory.None
 
 
+func _inflection_time():
+	if SkillService.has_skill(Enums.Skills.FasterInflections):
+		return 3
+
+	return 5
+
+
 func _process_lifespan() -> bool:
-	#if BearerService.is_dead() == false:
-	#return false
+	if BearerService.is_dead() == false:
+		return false
 
 	bearer_died.emit(BearerService.current)
 
@@ -136,4 +144,7 @@ func _calculate_score_delta(bearer: BearerResource, inflection: InflectionResour
 		* SCORE_SCALE
 	)
 
-	return score_delta + score_delta * bond_bonus
+	if SkillService.has_skill(Enums.Skills.OverReflect):
+		score_delta *= 1.25
+
+	return score_delta + (score_delta * bond_bonus)
