@@ -18,7 +18,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Skill Selection"
+text = "It's not a complete loss, however. You gain..."
 horizontal_alignment = 1
 
 [node name="SkillList" type="VBoxContainer" parent="VBoxContainer"]
