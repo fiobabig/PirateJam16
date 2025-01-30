@@ -15,6 +15,7 @@ signal score_changed(previous: float, next: float)
 
 const SCORE_SCALE: float = .25
 
+var _available_decisions: Array[Decision]
 var _current_decision: Decision
 var _current_inflection: InflectionResource
 var _current_state: State
@@ -65,10 +66,17 @@ func reset():
 func _process_decision():
 	_time_to_next_inflection = _time_to_next_inflection - 1
 
-	var new_decision = decisions[randi() % decisions.size()]
+	# if we have run through the whole list, refill it
+	if _available_decisions.size() == 0:
+		_available_decisions = decisions.duplicate()  # copy from the master list
+		_available_decisions.shuffle()  # randomize the list
 
-	while new_decision == _current_decision:
-		new_decision = decisions[randi() % decisions.size()]
+		# if the next item we'd grab would be the last one we did, shuffle again
+	while _current_decision == _available_decisions[_available_decisions.size() - 1]:
+		_available_decisions.shuffle()
+
+	# use and remove the last item in the array
+	var new_decision = _available_decisions.pop_back()
 
 	_current_decision = new_decision
 
